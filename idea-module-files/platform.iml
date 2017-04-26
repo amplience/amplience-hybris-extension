@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="spring">
+      <configuration>
+        <fileset id="platformspring" name="platformspring" removed="false">
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/jobs-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/product-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/order-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/category-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/classification-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/catalog-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/scripting/resources/scripting-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/validation/resources/validation-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/workflow/resources/workflow-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../hybris/bin/platform/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../hybris/bin/platform/eclipsebin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../hybris/bin/platform">
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/acceleratoraddon/hmc/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/modelclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/hmc/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/work" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/web/testclasses" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Common libs" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/resources/ant/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/resources/ant/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/gensrc" />
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="paymentstandard" exported="" />
+    <orderEntry type="module" module-name="comments" exported="" />
+    <orderEntry type="module" module-name="workflow" exported="" />
+    <orderEntry type="module" module-name="impex" exported="" />
+    <orderEntry type="module" module-name="catalog" exported="" />
+    <orderEntry type="module" module-name="advancedsavedquery" exported="" />
+    <orderEntry type="module" module-name="hac" exported="" />
+    <orderEntry type="module" module-name="commons" exported="" />
+    <orderEntry type="module" module-name="core" exported="" />
+    <orderEntry type="module" module-name="scripting" exported="" />
+    <orderEntry type="module" module-name="maintenanceweb" exported="" />
+    <orderEntry type="module" module-name="testweb" exported="" />
+    <orderEntry type="module" module-name="deliveryzone" exported="" />
+    <orderEntry type="module" module-name="europe1" exported="" />
+    <orderEntry type="module" module-name="platformservices" exported="" />
+    <orderEntry type="module" module-name="processing" exported="" />
+    <orderEntry type="module" module-name="config" exported="" />
+    <orderEntry type="module" module-name="validation" exported="" />
+    <orderEntry type="module" module-name="mediaweb" exported="" />
+    <orderEntry type="library" name="Common libs" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/resources/ant/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/resources/ant/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/resources/tanukiwrapper/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/gensrc" />
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/bootstrap/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/tomcat/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="paymentstandard" exported="" />
+    <orderEntry type="module" module-name="comments" exported="" />
+    <orderEntry type="module" module-name="workflow" exported="" />
+    <orderEntry type="module" module-name="impex" exported="" />
+    <orderEntry type="module" module-name="catalog" exported="" />
+    <orderEntry type="module" module-name="advancedsavedquery" exported="" />
+    <orderEntry type="module" module-name="hac" exported="" />
+    <orderEntry type="module" module-name="commons" exported="" />
+    <orderEntry type="module" module-name="core" exported="" />
+    <orderEntry type="module" module-name="scripting" exported="" />
+    <orderEntry type="module" module-name="maintenanceweb" exported="" />
+    <orderEntry type="module" module-name="testweb" exported="" />
+    <orderEntry type="module" module-name="deliveryzone" exported="" />
+    <orderEntry type="module" module-name="europe1" exported="" />
+    <orderEntry type="module" module-name="platformservices" exported="" />
+    <orderEntry type="module" module-name="processing" exported="" />
+    <orderEntry type="module" module-name="config" exported="" />
+    <orderEntry type="module" module-name="validation" exported="" />
+    <orderEntry type="module" module-name="mediaweb" exported="" />
+  </component>
+</module>

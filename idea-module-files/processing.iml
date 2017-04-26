@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="spring">
+      <configuration>
+        <fileset id="processingspring" name="processingspring" removed="false">
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/eclipsebin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing">
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/acceleratoraddon/hmc/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/hmc/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/web/testclasses" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Common libs" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="scripting" exported="" />
+    <orderEntry type="module" module-name="commons" exported="" />
+    <orderEntry type="module" module-name="platform" exported="" />
+    <orderEntry type="library" name="Common libs" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/bin" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="scripting" exported="" />
+    <orderEntry type="module" module-name="commons" exported="" />
+    <orderEntry type="module" module-name="platform" exported="" />
+  </component>
+</module>

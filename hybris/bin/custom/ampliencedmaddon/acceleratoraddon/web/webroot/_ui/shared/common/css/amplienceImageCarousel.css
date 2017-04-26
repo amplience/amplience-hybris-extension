@@ -1,0 +1,104 @@
+/*
+ *	Copyright (c) 2016 Amplience
+ */
+
+.amplience-carousel-viewer ul, .amplience-carousel-viewer li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.amplience-carousel-viewer .amp-main {
+	padding-bottom: 10px;
+	background-color: #fff;
+}
+
+.amplience-carousel-viewer {
+	background: rgb(255, 255, 255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0); /* IE6-9 */
+	padding: 10px;
+	width: 700px;
+	margin: 50px auto;
+}
+
+.amplience-carousel-viewer .amp-nav {
+	height: 150px;
+	position: relative;
+	margin-top: 8px;
+}
+
+.amplience-carousel-viewer .amp-nav .amp-slide {
+	width: 12.5%;
+	height: 80px;
+	border: 5px solid #ebebeb;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fff;
+}
+
+.amplience-carousel-viewer .amp-nav .amp-slide .amp-slide {
+	padding: 0;
+}
+
+.amplience-carousel-viewer .amp-nav .amp-slide:not(.current) {
+	opacity: 0.3
+}
+
+.amplience-carousel-viewer .amp-nav .next, .amplience-carousel-viewer .amp-nav .prev {
+	height: 60px;
+	opacity: 0.8;
+	width: 2%;
+	font-size: 20px;
+	line-height: 60px;
+	vertical-align: middle;
+	position: absolute;
+	color: #D61B5C;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.amplience-carousel-viewer .amp-nav .other {
+	clear: both;
+	height: 60px;
+	margin-bottom: 8px;
+}
+
+.amplience-carousel-viewer .amp-nav .next {
+	right: 0;
+	text-align: left;
+}
+
+.amplience-carousel-viewer .amp-nav .prev {
+	left: 0;
+	text-align: right;
+}
+
+.amplience-carousel-viewer .amp-nav .message {
+	opacity: 0.8;
+	width: 96%;
+	height: 60px;
+	line-height: 60px;
+	left: 2%;
+	position: absolute;
+	vertical-align: middle;
+	color: #D61B5C;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bolder;
+	font-family: sans-serif;
+}
+
+.amplience-carousel-viewer .amp-nav img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="ampliencedmbackofficespring" name="ampliencedmbackofficespring" removed="false">
+          <file>file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/resources/ampliencedmbackoffice-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/resources/backoffice-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/basecommerce/resources/basecommerce-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-content/cms2/resources/cms2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/commerceservices/resources/commerceservices-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-backoffice/commerceservicesbackoffice/resources/commerceservicesbackoffice-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/customerreview/resources/customerreview-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-platform-optional/ldap/resources/ldap-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/payment/resources/payment-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/validation/resources/validation-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/classification-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/scripting/resources/scripting-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/jobs-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/category-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/catalog-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/product-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/order-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/workflow/resources/workflow-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-platform-backoffice/platformbackoffice/resources/platformbackoffice-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-platform-optional/platformhmc/resources/platformhmc-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/product-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/category-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/order-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/jobs-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/catalog-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/classification-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/promotions/resources/promotions-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-backoffice/promotionsbackoffice/resources/promotionsbackoffice-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/scripting/resources/scripting-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearch/resources/solrfacetsearch-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearch/resources/global-solrfacetsearch-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearch/resources/solrfacetsearch-converters.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearchhmc/resources/solrfacetsearchhmc-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/validation/resources/validation-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/voucher/resources/voucher-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-backoffice/voucherbackoffice/resources/voucherbackoffice-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/workflow/resources/workflow-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/eclipsebin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice">
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/hmc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/hmc/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/hmc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/hmc/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/backoffice/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/hmc/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/hmc/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmbackoffice/web/webroot/WEB-INF/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Common libs" level="project" />
+    <orderEntry type="module" module-name="backoffice" exported="" />
+    <orderEntry type="module" module-name="platform" exported="" />
+    <orderEntry type="module" module-name="commerceservicesbackoffice" exported="" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/sac-1.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zk-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zel-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zul-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/jfreechart.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkex-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zweb-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zhtml-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkmax-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/ckez-4.4.6.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/gmapsz-3.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkbind-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkplus-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zcommon-7.0.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/atlantic-1.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkcharts-2.0.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/commons-lang3-3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/jaxb-impl-2.2.4-1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpitcore-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkspring-core-3.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpitadmin-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpittesting-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpitwidgets-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/backoffice-core-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/zkspring-security-3.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpitframework-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/webfragmentCore_XSSFilter.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/backoffice-widgets-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpit-demo-widgets-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpit-data-integration-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpit-standard-editors-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/cockpit-module-aggregator-2.3.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/webfragmentCore_requestContextFilter.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/webfragmentCore_backofficefilterchain.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/webfragmentCore_backofficeMobileFilter.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/webfragmentCore_springSecurityFilterChain.jar!/" />
+          <root url="jar://$MODULE_DIR$/../hybris/bin/ext-backoffice/backoffice/web/webroot/WEB-INF/lib/webfragmentCore_backofficeContextClassloaderFilter.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

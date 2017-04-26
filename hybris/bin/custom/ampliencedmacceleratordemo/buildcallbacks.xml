@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2016-2017 Amplience
+-->
+
+<project name="ampliencedmacceleratordemo_buildcallbacks">
+
+	<macrodef name="ampliencedmacceleratordemo_before_build">
+		<sequential>
+			<ampliencedmacceleratordemo_delete_web_dir/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="ampliencedmacceleratordemo_after_clean">
+		<sequential>
+			<ampliencedmacceleratordemo_delete_web_dir/>
+		</sequential>
+	</macrodef>
+
+
+	<macrodef name="ampliencedmacceleratordemo_delete_web_dir">
+		<sequential>
+			<!-- This is required until PLA-10893 is fixed -->
+			<echo level="info" message="Removing web directory for extension ampliencedmacceleratordemo"/>
+			<delete dir="${ext.ampliencedmcockpits.path}/web" quiet="true"/>
+		</sequential>
+	</macrodef>
+
+</project>

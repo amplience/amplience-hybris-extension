@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2016 Amplience
+-->
+
+<content-elements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="content-element.xsd">
+
+	<content-element type="AmplienceUGCMediaWallComponent" name="type.AmplienceUGCMediaWallComponent.name"
+					 description="type.AmplienceUGCMediaWallComponent.description"
+					 image="cmscockpit/images/ContentElementProductlist.gif"
+					 refImage="cmscockpit/images/ContentElementProductlistReference.gif"
+					 imageSmall="cmscockpit/images/ContentElementProductlistSmall.gif"/>
+
+</content-elements>

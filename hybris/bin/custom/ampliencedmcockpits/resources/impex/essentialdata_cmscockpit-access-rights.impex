@@ -1,0 +1,16 @@
+#
+# Import Access Rights for CMS Cockpit
+#
+
+$START_USERRIGHTS;;;;;;;;;
+Type;UID;MemberOfGroups;Password;Target;read;change;create;remove;change_perm
+UserGroup;cmsmanagergroup;;;;;;;;
+
+# general
+;;;;AmpliencePageScriptComponent;-;-;-;-;-;
+;;;;AmplienceUGCCarouselComponent;+;+;+;+;+;
+;;;;AmplienceUGCMediaWallComponent;+;+;+;+;+;
+;;;;AmplienceResponsiveImageComponent;+;+;+;+;+;
+;;;;AmplienceImageCarouselComponent;+;+;+;+;+;
+
+$END_USERRIGHTS;;;;;

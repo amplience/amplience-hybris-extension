@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+
+	#if ($ctx.missingImageCount == 0 )
+    <p>Every product has images.</p>
+	#else
+    <p>There are ${ctx.missingImageCount} products without images.</p>
+    <p/>
+	#end
+
+<p>Catalogs scanned:</p>
+<ul>
+	#foreach ($catalogVersion in $ctx.catalogVersions)
+        <li>$catalogVersion.name/$catalogVersion.id</li>
+	#end
+</ul>
+<br/>
+	#if ($ctx.missingImageCount > 0 )
+		#if ($ctx.products.size() < $ctx.missingImageCount)
+        <p>List of the first ${ctx.products.size()} products without images:</p>
+		#else
+        <p>List of products without images:</p>
+		#end
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+        </tr>
+		#foreach ($product in $ctx.products)
+            <tr>
+                <td>$product.sku</td>
+                <td>$product.name</td>
+            </tr>
+		#end
+    </table>
+	#end
+</body>
+</html>

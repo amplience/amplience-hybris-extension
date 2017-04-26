@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="ampliencedmacceleratordemospring" name="ampliencedmacceleratordemospring" removed="false">
+          <file>file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/resources/ampliencedmacceleratordemo-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-accelerator/acceleratorservices/resources/acceleratorservices-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/product-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/commercefacades/resources/commercefacades-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/order-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/scripting/resources/scripting-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/basecommerce/resources/basecommerce-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/classification-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/workflow/resources/workflow-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/jobs-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-content/cms2/resources/cms2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/category-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/catalog-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/commerceservices/resources/commerceservices-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/validation/resources/validation-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/custom/ampliencedm/resources/ampliencedm-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-accelerator/acceleratorservices/resources/acceleratorservices-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/basecommerce/resources/basecommerce-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-content/cms2/resources/cms2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-cockpit/cockpit/resources/cockpit-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-cockpit/cockpit/resources/global-cockpit-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/commercefacades/resources/commercefacades-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/commerceservices/resources/commerceservices-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/customerreview/resources/customerreview-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-platform-optional/ldap/resources/ldap-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/payment/resources/payment-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/product-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/comments/resources/comments-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/event-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/order-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/scripting/resources/scripting-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/persistence-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-filter-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/europe1/resources/europe1-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/interceptor-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/security-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/classification-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/workflow/resources/workflow-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/jobs-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/impex/resources/impex-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/i18n-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/category-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/user-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/catalog-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-media-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/validation/resources/validation-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-profiling-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/core-cache.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-statistics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/core/resources/global-servicelayer-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-platform-optional/platformhmc/resources/platformhmc-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/catalog-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/product-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/classification-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/order-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/category-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/platformservices/resources/jobs-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/cronjob-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processengine-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/processing-jmx-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/processing/resources/task-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-content/productcockpit/resources/productcockpit-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/promotions/resources/promotions-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/scripting/resources/scripting-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearch/resources/solrfacetsearch-converters.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearch/resources/global-solrfacetsearch-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearch/resources/solrfacetsearch-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/solrfacetsearchhmc/resources/solrfacetsearchhmc-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/ticketsystem/resources/ticketsystem-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/validation/resources/validation-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/ext-commerce/voucher/resources/voucher-spring.xml</file>
+          <file>file://$MODULE_DIR$/../hybris/bin/platform/ext/workflow/resources/workflow-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/eclipsebin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo">
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../hybris/bin/custom/ampliencedmacceleratordemo/eclipsebin" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Common libs" level="project" />
+    <orderEntry type="module" module-name="acceleratorservices" exported="" />
+    <orderEntry type="module" module-name="productcockpit" exported="" />
+    <orderEntry type="module" module-name="ampliencedm" exported="" />
+    <orderEntry type="module" module-name="platform" exported="" />
+  </component>
+</module>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2016 Amplience
+-->
+<configuration xmlns="hybris.de/schemas/hmc/generic"
+			   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			   xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
+
+
+	<!-- Configuration for extension ampliencedm -->
+
+	<explorertree mode="append">
+		<group name="group.reporting" description="group.reporting.description">
+			<group name="group.reporting.amplience" description="group.reporting.amplience.description">
+				<typeref type="AmplienceProductsMissingMediaView"/>
+			</group>
+		</group>
+	</explorertree>
+
+	<type name="BaseSite" mode="append">
+		<organizer>
+			<editor>
+				<tab name="tab.amplience" mode="append">
+					<section name="sec.amplience" mode="append">
+						<listlayout>
+							<attribute name="amplienceAccountIdentifier"/>
+							<attribute name="amplienceAnalyticsCollectorId"/>
+							<attribute name="amplienceImageHostname"/>
+							<attribute name="amplienceContentHostname"/>
+							<attribute name="amplienceAnalyticsHostname"/>
+							<attribute name="amplienceScriptHostname"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="Product" mode="append">
+		<organizer>
+			<editor>
+				<tab name="tab.product.multimedia" mode="append">
+					<section name="sec.amplience" mode="append" position="0">
+						<listlayout>
+							<attribute name="amplienceImageStatus"/>
+							<attribute name="amplienceAltSwatch"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="AmplienceProductImageStatusUpdateCronJob" mode="append">
+		<organizer>
+			<editor>
+				<tab name="tab.cronjob.common">
+					<section name="section.cronjob.parameters">
+						<listlayout>
+							<attribute name="site"/>
+							<attribute name="longQuery">
+								<textareaeditor expanded="true" wrap="false" rows="15" cols="100"/>
+							</attribute>
+							<attribute name="amplienceProductImageStatuses"/>
+							<attribute name="catalogVersions"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="AbstractAmplienceUGCComponent" mode="append">
+		<organizer mode="append">
+			<editor mode="append">
+				<tab name="properties" position="0">
+					<section name="section.cmscomponent.features">
+						<listlayout>
+							<attribute name="streamID"/>
+							<attribute name="hashtag"/>
+							<attribute name="tags"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="AmplienceUGCCarouselComponent" mode="append">
+		<organizer mode="append">
+			<editor mode="append">
+				<tab name="properties" position="0">
+					<section name="section.cmscomponent.features">
+						<listlayout>
+							<attribute name="title"/>
+							<attribute name="callToAction"/>
+							<attribute name="autoPlay"/>
+							<attribute name="numberOfSlides"/>
+							<attribute name="enableModal"/>
+							<attribute name="showModalText"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="AmplienceUGCMediaWallComponent" mode="append">
+		<organizer mode="append">
+			<editor mode="append">
+				<tab name="properties" position="0">
+					<section name="section.cmscomponent.features">
+						<listlayout>
+							<attribute name="wallLayout"/>
+							<attribute name="title"/>
+							<attribute name="callToAction"/>
+							<attribute name="enableModal"/>
+							<attribute name="showModalText"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="AmplienceResponsiveImageComponent" mode="append">
+		<organizer mode="append">
+			<editor mode="append">
+				<tab name="properties" position="0">
+					<section name="section.cmscomponent.features">
+						<listlayout>
+							<attribute name="imageName"/>
+							<attribute name="params"/>
+							<attribute name="title"/>
+							<attribute name="alt"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<type name="AmplienceImageCarouselComponent" mode="append">
+		<organizer mode="append">
+			<editor mode="append">
+				<tab name="properties" position="0">
+					<section name="section.cmscomponent.features">
+						<listlayout>
+							<attribute name="setName"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+	<!-- Reports -->
+
+	<type name="AmplienceProductsMissingMediaView" icon="images/search.gif" mode="append">
+		<organizer>
+			<search mode="replace">
+				<condition attribute="catalogVersion" operator="equal"/>
+			</search>
+			<result>
+				<listview mode="replace">
+					<itemlayout>
+						<attribute name="product" />
+					</itemlayout>
+				</listview>
+			</result>
+		</organizer>
+	</type>
+
+	<type name="AmplienceProductImageEmailReportCronJob" mode="append">
+		<organizer>
+			<editor>
+				<tab name="tab.cronjob.common">
+					<section name="section.cronjob.parameters">
+						<listlayout>
+							<attribute name="longQuery">
+								<textareaeditor expanded="true" wrap="false" rows="15" cols="100"/>
+							</attribute>
+							<attribute name="limit"/>
+							<attribute name="catalogVersions"/>
+							<attribute name="subjectTemplate"/>
+							<attribute name="bodyTemplate"/>
+							<attribute name="sendWhenNoneMissing"/>
+							<attribute name="emailAddresses"/>
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+
+
+</configuration>

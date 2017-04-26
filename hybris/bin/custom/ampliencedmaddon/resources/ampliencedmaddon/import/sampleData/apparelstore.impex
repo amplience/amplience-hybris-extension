@@ -1,0 +1,42 @@
+#
+# Copyright (c) 2016 Amplience
+#
+
+
+
+# This file is loaded by the apparelStoreSampleDataEventListener after the ApparelStore data is loaded
+#
+
+INSERT_UPDATE AmplienceProductImageStatusUpdateCronJob;code[unique=true];amplienceProductImageStatuses(code);catalogVersions(catalog(id),version);site(uid);longQuery
+;AmplienceProductImageStatusUpdateCronJob;Missing,Unknown;apparelProductCatalog:Staged;apparel-uk;"
+		SELECT DISTINCT tbl.pk, tbl.code FROM (
+		{{
+		SELECT {pk} AS pk, {code} AS code
+		FROM {ApparelStyleVariantProduct!}
+		WHERE {catalogVersion} IN (?catalogVersions)
+		      AND ( {amplienceImageStatus} IN (?amplienceProductImageStatuses) OR {amplienceImageStatus} IS NULL )
+		}}
+		UNION
+		{{
+		SELECT {pk} AS pk, {code} AS code
+		FROM {ApparelProduct!}
+		WHERE {variantType} IS NULL
+		      AND {catalogVersion} IN (?catalogVersions)
+		      AND ( {amplienceImageStatus} IN (?amplienceProductImageStatuses) OR {amplienceImageStatus} IS NULL )
+		}}
+		) tbl ORDER BY tbl.code";
+
+
+INSERT_UPDATE AmplienceProductImageEmailReportCronJob; code[unique=true];emailAddresses;sendWhenNoneMissing;catalogVersions(catalog(id),version);subjectTemplate(code);bodyTemplate(code);longQuery
+;AmplienceProductImageEmailReportCronJob;;true;apparelProductCatalog:Staged;amplience-missingImages-subject-template;amplience-missingImages-body-template; "
+		SELECT {p.PK}
+		FROM {Product AS p}
+		WHERE {p.amplienceImageStatus} = ({{
+				SELECT {pk}
+				FROM {AmplienceProductImageStatus}
+				WHERE {code} = 'Missing'
+		}})
+		AND {p.catalogVersion} IN (?catalogVersions)
+		ORDER BY {p.name:o} ASC, {p.code} ASC
+	";
+

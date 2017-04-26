@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2016 Amplience
+-->
+
+<project name="ampliencedmaddon_buildcallbacks">
+
+	<macrodef name="ampliencedmaddon_after_build">
+		<sequential>
+			<if>
+				<and>
+					<isset property="ext.yacceleratorstorefront.path"/>
+					<matches pattern="^5\.7\..*$" string="${hybris.build.version}"/>
+				</and>
+				<then>
+					<!--
+					 Copy all the files from ampliencedmaddon/resources/ampliencedmaddon/storefront-patch/* into storefront/web/webroot/WEB-INF/*
+					 this allows us to fix any template files in the yacceleratorstorefront that are too broken to be worked around.
+
+					 In 5.7 the tags/responsive/template/master.tag is missing the <addonScripts:addonScripts/> at the end of the body
+					 so we copy over some fixed tag files that resolve this issue. This issue is resolved in 6.0.
+					-->
+					<echo level="info" message="ampliencedmaddon - Patching yacceleratorstorefront ${hybris.build.version} with missing files"/>
+					<copy todir="${ext.yacceleratorstorefront.path}/web/webroot/WEB-INF" overwrite="true" verbose="true">
+						<fileset dir="${ext.ampliencedmaddon.path}/resources/ampliencedmaddon/storefront-patch"/>
+					</copy>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+</project>

@@ -1,0 +1,56 @@
+# Create a product without media.
+
+#% impex.setLocale( Locale.GERMAN );
+
+# Macros / Replacement Parameter definitions
+$lang=en
+$productCatalog=apparelProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Staged']))
+$approved=approvalstatus(code)[default='approved']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=eu-vat-full]
+
+
+INSERT_UPDATE ApparelProduct;code[unique=true];$catalogVersion;unit(code)[default='pieces'];supercategories(code,$catalogVersion);varianttype(code);$approved;$taxGroup;ean;genders(code)
+;140468;;pieces;270600,kids,streetwear,Billabong;ApparelStyleVariantProduct;;;;MALE
+
+
+INSERT_UPDATE ApparelStyleVariantProduct;code[unique=true];$catalogVersion;$baseProduct;supercategories(code,$catalogVersion);swatchColors(code);unit(code)[default='pieces'];varianttype(code);$approved
+;140468_multico;;140468;270600,kids,streetwear,Billabong;;pieces;ApparelSizeVariantProduct;
+;140468_neo_orange;;140468;270600,kids,streetwear,Billabong;ORANGE;pieces;ApparelSizeVariantProduct;
+;140468_blue;;140468;270600,kids,streetwear,Billabong;BLUE;pieces;ApparelSizeVariantProduct;
+
+
+INSERT_UPDATE ApparelSizeVariantProduct;code[unique=true];$catalogVersion;$baseProduct;supercategories(code,$catalogVersion);unit(code)[default='pieces'];;$approved;$taxGroup
+;300742616;;140468_multico;270600,kids,streetwear,Billabong;pieces;;;
+;300742619;;140468_multico;270600,kids,streetwear,Billabong;pieces;;;
+;300742610;;140468_neo_orange;270600,kids,streetwear,Billabong;pieces;;;
+;300742611;;140468_neo_orange;270600,kids,streetwear,Billabong;pieces;;;
+;300742612;;140468_neo_orange;270600,kids,streetwear,Billabong;pieces;;;
+;300742613;;140468_neo_orange;270600,kids,streetwear,Billabong;pieces;;;
+;300742614;;140468_neo_orange;270600,kids,streetwear,Billabong;pieces;;;
+;300742606;;140468_blue;270600,kids,streetwear,Billabong;pieces;;;
+;300742607;;140468_blue;270600,kids,streetwear,Billabong;pieces;;;
+;300742605;;140468_blue;270600,kids,streetwear,Billabong;pieces;;;
+;300742608;;140468_blue;270600,kids,streetwear,Billabong;pieces;;;
+;300742609;;140468_blue;270600,kids,streetwear,Billabong;pieces;;;
+
+
+# Update allProducts with localisations
+UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang];ApparelStyleVariantProduct.style[lang=$lang];ApparelSizeVariantProduct.size[lang=$lang]
+;140468;;Alexis Boardshort Youth;;;;;;
+;140468_blue;;Alexis Boardshort Youth blue;;;blue;;;
+;140468_multico;;Alexis Boardshort Youth multico;;;multico;;;
+;140468_neo_orange;;Alexis Boardshort Youth neo orange;;;neo orange;;;
+
+
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+;140468;pieces;GBP;40,46;1;1;false
+
+
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+;140468;PC040500;GB
+;140468_multico;PC040500;GB
+;140468_neo_orange;PC040500;GB
+;140468_blue;PC040500;GB
+
