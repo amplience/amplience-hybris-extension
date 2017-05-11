@@ -12,17 +12,19 @@
 <%@ taglib prefix="storepickup" tagdir="/WEB-INF/tags/responsive/storepickup" %>
 <%@ taglib prefix="amplience" tagdir="/WEB-INF/tags/addons/ampliencedmaddon/shared/amplience" %>
 
+<c:set var="qtyMinus" value="1" />
+
 <c:url value="${product.url}" var="productUrl" />
 
 <div class="quick-view-popup">
 
 	<div class="product-image">
+		<a  href="${productUrl}">
 		<amplience:renderKitPdpViewer product="${product}"/>
+		</a>
 	</div>
 	<div class="product-details">
 
-		<div class="product-details-container">
-			<div>
 				<div class="name">
 					<a href="${productUrl}">${product.name}</a>
 				</div>
@@ -51,7 +53,7 @@
 
 			</div>
 
-			<div class="addtocart-component" style="">
+	<div class="addtocart-component">
 				<product:quickViewProductVariantSelector />
 
 				<c:url value="/cart/add" var="addToCartUrl"/>
@@ -62,9 +64,9 @@
 
 						<div class="qty-selector input-group js-qty-selector">
 							<span class="input-group-btn">
-								<button class="btn btn-primary js-qty-selector-minus" type="button"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+						<button class="btn btn-primary js-qty-selector-minus" type="button" <c:if test="${qtyMinus <= 1}"><c:out value="disabled='disabled'"/></c:if> ><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
 							</span>
-							<input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value='1' data-max="${product.stock.stockLevel}" data-min="1" id="qty" name="qty"  />
+					<input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value="${qtyMinus}" data-max="${product.stock.stockLevel}" data-min="1" id="qty" name="qty"  />
 							<span class="input-group-btn">
 								<button class="btn btn-primary js-qty-selector-plus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 							</span>
@@ -96,12 +98,12 @@
 					</c:if>
 					<c:choose>
 						<c:when test="${fn:contains(buttonType, 'button')}">
-							<button type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart outOfStock" disabled="disabled">
+					<button type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart btn-icon glyphicon-shopping-cart outOfStock" disabled="disabled">
 								<spring:theme code="product.variants.out.of.stock"/>
 							</button>
 						</c:when>
 						<c:otherwise>
-							<button id="addToCartButton" type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart" disabled="disabled">
+					<button id="addToCartButton" type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
 								<spring:theme code="basket.add.to.basket"/>
 							</button>
 						</c:otherwise>
@@ -117,5 +119,3 @@
 
 			</div>
 		</div>
-	</div>
-</div>

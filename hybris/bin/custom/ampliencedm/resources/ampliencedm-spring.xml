@@ -264,4 +264,24 @@
 		<property name="amplienceEmailContextProductConverter" ref="amplienceEmailContextProductConverter"/>
 		<property name="amplienceEmailContextCatalogVersionConverter" ref="amplienceEmailContextCatalogVersionConverter"/>
 	</bean>
+
+
+	<!--
+		Fix for incorrectly named bean in commerceservices-spring-solrfacetsearch.xml.
+		The bean exists in commerceservices-spring-solrfacetsearch.xml but has ID defaultProductStockLevelStatusValueProvider
+		and is aliased to name productStockLevelStatusValueProvider, however the code that looks this up in
+		de.hybris.platform.solrfacetsearch.hmc.FieldValueProviderSelectEditorChip uses the getBeanNamesForType()
+		method which only returns the canonical names of the beans and not the bean's alias names.
+		Fix for SolrJ v6 change that doesn't index unknown item types in the same was as v5.
+	-->
+	<bean id="productStockLevelStatusValueProvider"
+		  parent="defaultProductStockLevelStatusValueProvider"
+		  class="com.amplience.hybris.dm.search.provider.FixedProductStockLevelStatusValueProvider"/>
+
+	<bean id="variantProductStockLevelStatusValueProvider"
+		  parent="defaultProductStockLevelStatusValueProvider"
+		  class="com.amplience.hybris.dm.search.provider.FixedVariantProductStockLevelStatusValueProvider">
+		<property name="productSource" ref="variantProductSource"/>
+	</bean>
+
 </beans>

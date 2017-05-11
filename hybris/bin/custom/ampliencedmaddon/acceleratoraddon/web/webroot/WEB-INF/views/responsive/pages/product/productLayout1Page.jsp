@@ -9,23 +9,23 @@
 <template:page pageTitle="${pageTitle}">
 
 	<cms:pageSlot position="Section1" var="comp" element="div" class="productDetailsPageSection1">
-		<cms:component component="${comp}"/>
+		<cms:component component="${comp}" element="div" class="productDetailsPageSection1-component"/>
 	</cms:pageSlot>
 
 	<amplienceDmAddonProduct:productDetailsPanel/>
 
 	<cms:pageSlot position="CrossSelling" var="comp" element="div" class="productDetailsPageSectionCrossSelling">
-		<cms:component component="${comp}"/>
+		<cms:component component="${comp}" element="div" class="productDetailsPageSectionCrossSelling-component"/>
 	</cms:pageSlot>
 	<cms:pageSlot position="Section3" var="comp" element="div" class="productDetailsPageSection3">
-		<cms:component component="${comp}"/>
+		<cms:component component="${comp}" element="div" class="productDetailsPageSection3-component"/>
 	</cms:pageSlot>
 	<cms:pageSlot position="UpSelling" var="comp" element="div" class="productDetailsPageSectionUpSelling">
-		<cms:component component="${comp}"/>
+		<cms:component component="${comp}" element="div" class="productDetailsPageSectionUpSelling-component"/>
 	</cms:pageSlot>
 	<product:productPageTabs/>
 	<cms:pageSlot position="Section4" var="comp" element="div" class="productDetailsPageSection4">
-		<cms:component component="${comp}"/>
+		<cms:component component="${comp}" element="div" class="productDetailsPageSection4-component"/>
 	</cms:pageSlot>
 
 	<%-- The quick view popup requires the RenderKit Javascript --%>

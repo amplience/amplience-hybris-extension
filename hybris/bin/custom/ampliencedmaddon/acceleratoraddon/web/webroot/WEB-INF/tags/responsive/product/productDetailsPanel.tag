@@ -5,18 +5,20 @@
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product"%>
 <%@ taglib prefix="amplience" tagdir="/WEB-INF/tags/addons/ampliencedmaddon/shared/amplience" %>
 
-<div class="product-details">
+<div class="product-details page-title">
 	<ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
-		<div class="name">${product.name} <span class="sku">ID ${product.code}</span></div>
+		<div class="name">${product.name} <span class="sku">ID</span><span class="code">${product.code}</span></div>
 	</ycommerce:testId>
 	<product:productReviewSummary product="${product}" showLinks="true"/>
-</div>
 
+</div>
 <div class="row">
-	<div class="col-md-6 col-lg-4">
+	<div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
 		<amplience:standardPdpViewer product="${product}" />
 	</div>
-	<div class="col-md-6 col-lg-8">
+	<div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+	<div class="col-sm-6 col-lg-8">
+		<div class="product-main-info">
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="product-details">
@@ -31,18 +33,21 @@
 				</div>
 			</div>
 
-			<div class="col-lg-6">
+				<div class="col-sm-12 col-md-9 col-lg-6">
 
-				<cms:pageSlot position="VariantSelector" var="component">
-					<cms:component component="${component}" />
+							<cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
+								<cms:component component="${component}" element="div" class="yComponentWrapper page-details-variants-select-component"/>
 				</cms:pageSlot>
 
-				<cms:pageSlot position="AddToCart" var="component">
-					<cms:component component="${component}" />
+
+
+							<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
+								<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
 				</cms:pageSlot>
 
 			</div>
 		</div>
 	</div>
-</div>
 
+</div>
+</div>
