@@ -16,7 +16,7 @@ Add the standard hybris Accelerator Apparel Store hostnames to your `/etc/hosts`
 
 Checkout the project from bitbucket (if you are reading this then presumably you have already done this).
 
-Unzip the hybris folder from the `hybris-commerce-suite-5.7.x.x.zip` into your working copy folder.
+Unzip the hybris folder from the `hybris-commerce-suite-6.2.x.x.zip` into your working copy folder.
 
 Run the install script from the root of the working copy.
 
