@@ -201,3 +201,9 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 * `cmscockpit` - <http://hybris.dev.adis.ws/cmscockpit>
 * UK Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
 * German Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
+
+## License and Copyright
+
+This software is licensed under the Apache License, Version 2.0. See the [ License file ](LICENSE).
+
+Copyright 2017 Amplience
