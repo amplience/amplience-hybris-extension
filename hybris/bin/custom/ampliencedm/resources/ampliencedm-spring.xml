@@ -21,7 +21,7 @@
 	</bean>
 
 	<!-- Replace product image populators -->
-	<alias name="amplienceProductPrimaryImagePopulator" alias="productPrimaryImagePopulator"/>
+	<alias name="amplienceProductPrimaryImagePopulator" alias="acceleratorProductPrimaryImagePopulator"/>
 	<bean id="amplienceProductPrimaryImagePopulator" parent="defaultProductPrimaryImagePopulator" class="com.amplience.hybris.dm.populators.AmplienceProductPrimaryImagePopulator">
 		<property name="amplienceProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
 		<property name="imageFormats">
@@ -41,8 +41,8 @@
 	</bean>
 
 
-	<alias name="amplienceVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
-	<bean id="amplienceVariantOptionDataPopulator" class="com.amplience.hybris.dm.populators.AmplienceVariantOptionDataPopulator" parent="defaultVariantOptionDataPopulator">
+	<alias name="amplienceVariantOptionDataPopulator" alias="defaultAcceleratorVariantOptionDataPopulator"/>
+ 	<bean id="amplienceVariantOptionDataPopulator" class="com.amplience.hybris.dm.populators.AmplienceVariantOptionDataPopulator" parent="defaultVariantOptionDataPopulator">
 		<property name="typeService" ref="typeService"/>
 		<property name="imageFormatProductImageUrlResolverMap">
 			<map>
@@ -56,7 +56,9 @@
 			</map>
 		</property>
 	</bean>
-
+	
+	
+	
 	<!--<alias name="defaultAmplienceSearchResultVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>-->
 	<bean id="defaultAmplienceSearchResultVariantProductPopulator" class="com.amplience.hybris.dm.populators.AmplienceSearchResultVariantProductPopulator"
 		  parent="variantCommerceSearchResultProductPopulator">

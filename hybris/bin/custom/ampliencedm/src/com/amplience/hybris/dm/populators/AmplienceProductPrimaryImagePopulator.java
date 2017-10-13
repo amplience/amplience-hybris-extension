@@ -53,7 +53,7 @@ public class AmplienceProductPrimaryImagePopulator<SOURCE extends ProductModel, 
 			final ImageData imageData = new ImageData();
 			imageData.setFormat(imageFormat);
 			imageData.setImageType(ImageDataType.PRIMARY);
-			imageData.setUrl(imageUrl + "&$" + imageFormat + "$");
+			imageData.setUrl("https:" + imageUrl + "&$" + imageFormat + "$");
 			imageData.setAltText(productModel.getName());
 			imageList.add(imageData);
 		}

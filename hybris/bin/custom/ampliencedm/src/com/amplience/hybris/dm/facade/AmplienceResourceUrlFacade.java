@@ -14,10 +14,10 @@ public interface AmplienceResourceUrlFacade
 	/**
 	 * Get the Amplience resource data for a specific type of resource.
 	 *
+	 * @param requestUrl The request Url
 	 * @param type The resource type - specified in the amplience ecommBride
 	 * @param param The optional parameter. Type specific.
-	 * @param forceSecure Force the resource URL to be secure
 	 * @return The Amplience resource data
 	 */
-	AmplienceResourceData getResourceUrl(String type, String param, boolean forceSecure) throws BusinessException;
+	AmplienceResourceData getResourceUrl(final String requestUrl, String type, String param) throws BusinessException;
 }

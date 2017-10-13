@@ -245,9 +245,7 @@ public class AmplienceBeforeViewHandler implements BeforeViewHandlerAdaptee
 
 	protected void addInstagramToModel(final ModelMap model)
 	{
-		final BaseSiteModel currentBaseSite = getBaseSiteService().getCurrentBaseSite();
-		final String instagramAuthCallbackUrl = getSiteBaseUrlResolutionService().getWebsiteUrlForSite(currentBaseSite, true, "/misc/amplience/instagram.html");
-		model.addAttribute("instagramAuthCallbackUrl", instagramAuthCallbackUrl);
+		model.addAttribute("instagramAuthCallbackUrl", "/misc/amplience/instagram.html");
 	}
 
 	protected void addCustomerIdToModel(final ModelMap model)
