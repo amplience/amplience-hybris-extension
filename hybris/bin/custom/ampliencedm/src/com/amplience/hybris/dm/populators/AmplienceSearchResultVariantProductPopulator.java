@@ -86,7 +86,7 @@ public class AmplienceSearchResultVariantProductPopulator extends SearchResultVa
 				final ImageData imageData = createImageData();
 				imageData.setImageType(ImageDataType.PRIMARY);
 				imageData.setFormat(imageFormat);
-				imageData.setUrl(imageUrl + "&$" + imageFormat + "$" + productImageUrlContextualQuery);
+				imageData.setUrl("https:" + imageUrl + "&$" + imageFormat + "$" + productImageUrlContextualQuery);
 
 				result.add(imageData);
 			}

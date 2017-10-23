@@ -69,7 +69,8 @@
                acceptCount="100"
                connectionTimeout="20000" 
                URIEncoding="UTF-8"
-               disableUploadTimeout="true" />
+               disableUploadTimeout="true"
+               redirectPort="${tomcat.ssl.port}" />
 
     <Connector port="${tomcat.ssl.port}" 
     				maxHttpHeaderSize="8192"

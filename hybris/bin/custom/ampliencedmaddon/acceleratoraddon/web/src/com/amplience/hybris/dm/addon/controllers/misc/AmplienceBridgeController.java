@@ -15,6 +15,8 @@ import de.hybris.platform.commercefacades.order.data.CartModificationData;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
 import de.hybris.platform.servicelayer.exceptions.BusinessException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
+
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -73,7 +75,8 @@ public class AmplienceBridgeController extends AbstractController
 	@ResponseBody
 	public AmplienceResourceData getResourceUrl(@RequestParam(value = "type") final String type, @RequestParam(value = "param", required = false) final String param, final HttpServletRequest request) throws BusinessException
 	{
-		return amplienceResourceUrlFacade.getResourceUrl(type, param, request.isSecure());
+		return amplienceResourceUrlFacade.getResourceUrl(
+				request.getRequestURL().toString().replace(request.getServletPath(), StringUtils.EMPTY), type, param);
 	}
 
 	/**

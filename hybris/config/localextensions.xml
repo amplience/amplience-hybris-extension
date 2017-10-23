@@ -2,20 +2,14 @@
 <hybrisconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="resources/schemas/extensions.xsd">
 	<extensions>
 		<path dir="${HYBRIS_BIN_DIR}"/>
-
 		<extension name="commercesearchbackoffice"/>
 		<extension name="solrfacetsearchbackoffice"/>
 		<extension name="solrserver"/>
 		<extension name="yacceleratorinitialdata"/>
 		<extension name="yacceleratorstorefront"/>
-		<extension name="yacceleratorcockpits"/>
 		<extension name="apparelstore"/>
-
-		<extension name="ampliencedm"/>
 		<extension name="ampliencedmaddon"/>
 		<extension name="ampliencedmcockpits"/>
 		<extension name="ampliencedmbackoffice"/>
-		<extension name="ampliencedmacceleratordemo"/>
-
 	</extensions>
 </hybrisconfig>

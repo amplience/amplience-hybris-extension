@@ -5,7 +5,7 @@
 ### Setting up development environment
 
 You need Oracle Java 1.8 JDK. You need java in your path and you need your `JAVA_HOME` set correctly.
-Make sure that you have the JCE cryptography extensions installed into this version of java.
+Make sure that you have the JCE cryptography extensions installed into this version of java. 
 If you upgrade Java make sure that you install the JCE cryptography extensions into the new version of Java.
 
 Add the standard hybris Accelerator Apparel Store hostnames to your `/etc/hosts` file:
@@ -14,9 +14,9 @@ Add the standard hybris Accelerator Apparel Store hostnames to your `/etc/hosts`
 127.0.0.1	apparel-uk.local. apparel-de.local.
 ```
 
-Checkout the project from bitbucket (if you are reading this then presumably you have already done this).
+Checkout the project from mercurial (if you are reading this then presumably you have already done this).
 
-Unzip the hybris folder from the `hybris-commerce-suite-6.2.x.x.zip` into your working copy folder.
+Unzip the hybris folder from the `hybris-commerce-suite-5.7.x.x.zip` into your working copy folder.
 
 Run the install script from the root of the working copy.
 
@@ -108,7 +108,7 @@ This file configures how the distribution is built and what it contains.
 
 ## Amplience Test Server
 
-Amplience have a test server running hybris. The server is running on AWS. Access to the server is limited.
+Amplience have a test server running hybris. The server is running on AWS. Access to the server is limited. 
 The server is running on hostname `hybris.dev.adis.ws`.
 
 Setting up a new environment, selecting an appropriate DB, etc.. is beyond the scope of this document and is covered in the hybris setup documentation.
@@ -133,7 +133,7 @@ The artifact will be output to `hybris/temp/hybris/hybrisServer`. The following 
 
 ### Deployment
 
-The artifacts above need to be copied to the test server. `rsync` or `scp` are good ways of copying these files up to the test server.
+The artifacts above need to be copied to the test server. `rsync` or `scp` are good ways of copying these files up to the test server. 
 The files should be copied into the `/home/hybris/artifacts` folder on the test server.
 
 On the test server the hybris instance is running as the `hybris` user and the application is deployed into the `/home/hybris/hybris/` folder.
@@ -201,9 +201,3 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 * `cmscockpit` - <http://hybris.dev.adis.ws/cmscockpit>
 * UK Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
 * German Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
-
-## License and Copyright
-
-This software is licensed under the Apache License, Version 2.0. See the [ License file ](LICENSE).
-
-Copyright 2017 Amplience

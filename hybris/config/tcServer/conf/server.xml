@@ -61,7 +61,8 @@
 			        maxIdleTime="${tomcat.maxidletime}"/>
 
     <Connector port="${tomcat.http.port}" 
-    				maxHttpHeaderSize="8192"
+			   maxHttpHeaderSize="8192"
+			   maxPostSize="4194304"
                maxThreads="${tomcat.maxthreads}" 
                protocol="org.apache.coyote.http11.Http11Protocol"
                executor="hybrisExecutor"
@@ -72,7 +73,8 @@
                disableUploadTimeout="true" />
 
     <Connector port="${tomcat.ssl.port}" 
-    				maxHttpHeaderSize="8192"
+			   maxHttpHeaderSize="8192"
+			   maxPostSize="4194304"
                maxThreads="150" 
                protocol="org.apache.coyote.http11.Http11Protocol"
                executor="hybrisExecutor"

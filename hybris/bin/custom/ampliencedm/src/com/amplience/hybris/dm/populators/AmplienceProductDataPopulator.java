@@ -94,8 +94,7 @@ public class AmplienceProductDataPopulator implements Populator<ProductData, Amp
 
 	protected void populateUrl(final ProductData source, final AmplienceProductData target)
 	{
-		final String productUrl = getSiteBaseUrlResolutionService().getWebsiteUrlForSite(getBaseSiteService().getCurrentBaseSite(), false, source.getUrl());
-		target.setUrl(productUrl);
+		target.setUrl(source.getUrl());
 	}
 
 	protected void populateImages(final ProductData source, final AmplienceProductData target)

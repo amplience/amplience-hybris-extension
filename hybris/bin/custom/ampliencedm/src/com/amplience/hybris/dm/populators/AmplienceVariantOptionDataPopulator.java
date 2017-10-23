@@ -51,7 +51,7 @@ public class AmplienceVariantOptionDataPopulator extends DefaultVariantOptionDat
 					final ImageData imageData = new ImageData();
 					imageData.setFormat(imageFormat);
 					imageData.setImageType(ImageDataType.PRIMARY);
-					imageData.setUrl(imageUrl + "&$" + imageFormat + "$");
+					imageData.setUrl("https:" + imageUrl + "&$" + imageFormat + "$");
 					imageData.setAltText(source.getName());
 
 					variantOptionQualifier.setImage(imageData);
