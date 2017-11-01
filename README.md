@@ -193,6 +193,7 @@ Wait for the application server to start:
 curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://localhost:9001/
 ```
 
+
 ### Test Server Websites
 
 * `hac` - <http://hybris.dev.adis.ws/>
@@ -201,3 +202,33 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 * `cmscockpit` - <http://hybris.dev.adis.ws/cmscockpit>
 * UK Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
 * German Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
+
+## Documentation
+
+ * [ Installation and Setup Guide ](/documentation/AmplienceForSAPHybrisCommerceInstallationGuide.pdf)
+ * [ Business User Guide](documentation/AmplienceForSAPHybrisCommerceBusinessUserGuide.pdf)
+ * [ System Integration Guide ](AmplienceForSAPHybrisCommerceSystemIntegrationGuide)
+ * See also the [ Amplience Customer Hub ](http://hub.amplience.com/display/DEV/SAP+Hybris+Commerce)
+
+## Changelog ##
+
+* For version history see the [Changelog](CHANGELOG.md)
+
+## Contribution guidelines ##
+There are two ways you can contribute to this project:
+
+1. File an `Issue` using the `Issues` facility in the Navigation Menu.  There are no guarantees that issues that are filed will be addressed or fixed within a certain time frame, but logging issues is an important step in improving the quality of these integrations.
+
+2. If you have a suggested code fix, please fork this repository and issue a 'pull request' against it.  Amplience will evaluate the pull request, test it, and possibly integrate it back into the main code branch.  Even if the Amplience partner does not choose to adopt your pull request, the pull request is now logged with this repository where other customers, clients, and integrators can see it and any of them can choose to adopt your suggested changes.
+
+Thank you for helping improve the quality of this integration!
+
+## Who do I talk to? ##
+
+* [Oliver Secluna](mailto:osecluna@amplience.com) - Product Owner, Integrations @ Amplience
+
+## License and Copyright
+
+This software is licensed under the Apache License, Version 2.0. See the [ License file ](LICENSE).
+
+Copyright 2017 Amplience
