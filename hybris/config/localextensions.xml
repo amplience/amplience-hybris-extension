@@ -11,5 +11,6 @@
 		<extension name="ampliencedmaddon"/>
 		<extension name="ampliencedmcockpits"/>
 		<extension name="ampliencedmbackoffice"/>
+				
 	</extensions>
 </hybrisconfig>

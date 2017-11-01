@@ -7,12 +7,6 @@
 		xmlns:base="http://www.hybris.com/cockpit/config/hybris"
 		xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
 
-	<!--
-		NOTE Although this backoffice configuration is in the ampliencedm extension
-		it is overwritten by the commerceservicesbackoffice extension, therefore
-		we must redeclare it again here, which comes after the commerceservicesbackoffice extension.
-	-->
-
 	<!-- Config for items created in ampliencedm extension -->
 
 	<context merge-by="type" parent="CronJob" type="AmplienceProductImageStatusUpdateCronJob" component="editor-area">
