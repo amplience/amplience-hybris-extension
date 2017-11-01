@@ -11,6 +11,11 @@
 		<extension name="ampliencedmaddon"/>
 		<extension name="ampliencedmcockpits"/>
 		<extension name="ampliencedmbackoffice"/>
+		
+		<extension name="commercewebservicescommons"/>
+		<extension name="ycommercewebservices"/>
+		<extension name="ycommercewebserviceshmc"/>
+		<extension name="ywebservices"/>
 				
 	</extensions>
 </hybrisconfig>
