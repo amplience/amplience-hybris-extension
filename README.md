@@ -193,6 +193,7 @@ Wait for the application server to start:
 curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://localhost:9001/
 ```
 
+
 ### Test Server Websites
 
 * `hac` - <http://hybris.dev.adis.ws/>
@@ -201,6 +202,14 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 * `cmscockpit` - <http://hybris.dev.adis.ws/cmscockpit>
 * UK Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
 * German Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
+
+## Documentation
+
+ * [ Installation and Setup Guide ](/documentation/AmplienceForSAPHybrisCommerceInstallationGuide.pdf)
+ * [ Business User Guide](documentation/AmplienceForSAPHybrisCommerceBusinessUserGuide.pdf)
+ * [ System Integration Guide ](AmplienceForSAPHybrisCommerceSystemIntegrationGuide)
+ * See also the [ Amplience Customer Hub ](http://hub.amplience.com/display/DEV/SAP+Hybris+Commerce)
+
 
 ## License and Copyright
 
