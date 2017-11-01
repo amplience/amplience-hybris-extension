@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="escape" uri="http://amplience.com/hybris/tld/escape" %>
+<%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product" %>
 
 <c:set var="cid" value="${component.pk}"/>
 
@@ -76,4 +77,7 @@
 </div>
 <div id="${cid}-upload"></div>
 
+<product:addToCartTitle/>
 <c:set var="enableAmplienceUgcJavascript" value="${true}" scope="request"/>
+<c:set var="enableAmplienceRenderKitJavascript" value="${true}" scope="request"/>
+

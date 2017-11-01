@@ -468,6 +468,7 @@
   <!-- created sessions by modifying the value below.                       -->
   <session-config>
     <session-timeout>30</session-timeout>
+	<tracking-mode>COOKIE</tracking-mode>
   </session-config>
   <!-- ===================== Default MIME Type Mappings =================== -->
   <!-- When serving static resources, Tomcat will automatically generate    -->

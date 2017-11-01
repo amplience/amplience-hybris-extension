@@ -152,35 +152,32 @@ public class DefaultAmplienceResourceUrlFacade implements AmplienceResourceUrlFa
 	/**
 	 * Get the Amplience resource data for a specific type of resource.
 	 *
+	 * @param requestUrl  The request Url
 	 * @param type        The resource type - specified in the amplience ecommBride
 	 * @param param       The optional parameter. Type specific.
-	 * @param forceSecure Force the resource URL to be secure
 	 * @return The Amplience resource data
 	 */
 	@Override
-	public AmplienceResourceData getResourceUrl(final String type, final String param, final boolean forceSecure) throws BusinessException
+	public AmplienceResourceData getResourceUrl(final String requestUrl, final String type, final String param) throws BusinessException
 	{
 		final ResourceInfo resourceInfo = getResourceInfo(type, param);
 
-		final String url = buildUrl(resourceInfo, forceSecure);
+		final String url = buildUrl(requestUrl, resourceInfo);
 		final AmplienceResourceData resourceData = new AmplienceResourceData();
 		resourceData.setUrl(url);
 		return resourceData;
 	}
 
-	protected String buildUrl(final ResourceInfo resourceInfo, final boolean forceSecure)
+	protected String buildUrl(final String requestUrl, final ResourceInfo resourceInfo)
 	{
-		final BaseSiteModel currentBaseSite = getBaseSiteService().getCurrentBaseSite();
-
-		final boolean secure = forceSecure || resourceInfo.isSecure();
 		final String path = resourceInfo.getPath();
 		final String queryParams = resourceInfo.getQueryParams();
 
 		if (queryParams != null && !queryParams.isEmpty())
 		{
-			return getSiteBaseUrlResolutionService().getWebsiteUrlForSite(currentBaseSite, secure, path, queryParams);
+			return requestUrl + queryParams;
 		}
-		return getSiteBaseUrlResolutionService().getWebsiteUrlForSite(currentBaseSite, secure, path);
+		return requestUrl + path;
 	}
 
 	public ResourceInfo getResourceInfo(final String type, final String param) throws BusinessException

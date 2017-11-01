@@ -68,6 +68,7 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$MODULE_DIR$/../sources/hybris-commerce-suite-5.7.0-source.zip!/" />
+          <root url="jar://$MODULE_DIR$/../sources/commerce-suite-6.2.0.0-RELEASE-sources.zip!/" />
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/../hybris/bin/platform/ext/core/bin" recursive="true" />
       </library>
