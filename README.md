@@ -206,6 +206,7 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 ## Documentation
 
  * [ Installation and Setup Guide ](/documentation/AmplienceForSAPHybrisCommerceInstallationGuide.pdf)
+ * [ Test Cases ](/documentation/AmplienceForSAPHybrisCommerceTestCases.pdf)
  * [ Business User Guide](documentation/AmplienceForSAPHybrisCommerceBusinessUserGuide.pdf)
  * [ System Integration Guide ](AmplienceForSAPHybrisCommerceSystemIntegrationGuide)
  * See also the [ Amplience Customer Hub ](http://hub.amplience.com/display/DEV/SAP+Hybris+Commerce)
