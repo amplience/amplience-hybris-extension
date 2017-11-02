@@ -1,4 +1,4 @@
-# Amplience DM Hybris Integration
+# Amplience Extension for SAP Hybris Commerce
 
 ## Local Development
 
@@ -44,7 +44,7 @@ ant clean all
 
 ### Running the jUnit tests
 
-Execute the following ant command to run the junit unittests for the amplience extensions.
+Execute the following ant command to run the junit unittests for the Amplience extensions.
 
 ```bash
 ant unittests -Dtestclasses.extensions="ampliencedm,ampliencedmaddon,ampliencedmbackoffice,ampliencedmcockpits"
@@ -94,7 +94,7 @@ Users
 
 ### Building a distribution for 3rd parties
 
-To build a distribution of the Amplience DM Hybris extensions run:
+To build a distribution of the Amplience Extension for SAP Hybris Commerce, run:
 
 ```bash
 ./dist.sh
@@ -229,7 +229,8 @@ Thank you for helping improve the quality of this integration!
 * [Oliver Secluna](mailto:osecluna@amplience.com) - Product Owner, Integrations @ Amplience
 
 ## License and Copyright
+Copyright and included software attribution: See [ NOTICE ](NOTICE.md)
 
 This software is licensed under the Apache License, Version 2.0. See the [ License file ](LICENSE).
 
-Copyright 2017 Amplience
+
