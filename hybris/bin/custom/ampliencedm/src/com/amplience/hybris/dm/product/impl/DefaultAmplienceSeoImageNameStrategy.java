@@ -166,7 +166,7 @@ public class DefaultAmplienceSeoImageNameStrategy implements AmplienceSeoImageNa
 		catch (final UnsupportedEncodingException encodingException)
 		{
 			encodedText = text;
-			LOG.debug(encodingException.getMessage());
+			LOG.error(encodingException.getMessage());
 		}
 
 		// Cleanup the text
