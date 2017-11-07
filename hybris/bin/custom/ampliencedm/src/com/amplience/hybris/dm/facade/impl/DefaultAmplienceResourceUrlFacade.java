@@ -194,15 +194,17 @@ public class DefaultAmplienceResourceUrlFacade implements AmplienceResourceUrlFa
 			case "search":
 				return getSearchPageResourceInfo(param);
 			default:
-			{
-				final String path = getTypeToPath().get(type);
-				if (path == null)
-				{
-					throw new BusinessException("Unknown resource type [" + type + "]");
-				}
-				return new ResourceInfo(path, null, getSecurePageTypes().contains(type));
-			}
+				return getDefaultResourceInfo(type);
 		}
+	}
+
+	private ResourceInfo getDefaultResourceInfo(final String type) throws BusinessException {
+		final String path = getTypeToPath().get(type);
+		if (path == null)
+		{
+			throw new BusinessException("Unknown resource type [" + type + "]");
+		}
+		return new ResourceInfo(path, null, getSecurePageTypes().contains(type));
 	}
 
 	protected ResourceInfo getSearchPageResourceInfo(final String queryText)
