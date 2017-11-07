@@ -3,10 +3,15 @@
  */
 package com.amplience.hybris.dm.facade.impl;
 
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Required;
+
 import com.amplience.hybris.dm.data.AmplienceResourceData;
 import com.amplience.hybris.dm.facade.AmplienceResourceUrlFacade;
+
 import de.hybris.platform.acceleratorservices.urlresolver.SiteBaseUrlResolutionService;
-import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
 import de.hybris.platform.category.CategoryService;
 import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
@@ -16,10 +21,6 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.BusinessException;
 import de.hybris.platform.site.BaseSiteService;
-import org.springframework.beans.factory.annotation.Required;
-
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Default implementation of AmplienceResourceUrlFacade
@@ -180,7 +181,7 @@ public class DefaultAmplienceResourceUrlFacade implements AmplienceResourceUrlFa
 		return requestUrl + path;
 	}
 
-	public ResourceInfo getResourceInfo(final String type, final String param) throws BusinessException
+	private ResourceInfo getResourceInfo(final String type, final String param) throws BusinessException
 	{
 		switch (type)
 		{
@@ -193,15 +194,17 @@ public class DefaultAmplienceResourceUrlFacade implements AmplienceResourceUrlFa
 			case "search":
 				return getSearchPageResourceInfo(param);
 			default:
-			{
-				final String path = getTypeToPath().get(type);
-				if (path == null)
-				{
-					throw new BusinessException("Unknown resource type [" + type + "]");
-				}
-				return new ResourceInfo(path, null, getSecurePageTypes().contains(type));
-			}
+				return getDefaultResourceInfo(type);
 		}
+	}
+
+	private ResourceInfo getDefaultResourceInfo(final String type) throws BusinessException {
+		final String path = getTypeToPath().get(type);
+		if (path == null)
+		{
+			throw new BusinessException("Unknown resource type [" + type + "]");
+		}
+		return new ResourceInfo(path, null, getSecurePageTypes().contains(type));
 	}
 
 	protected ResourceInfo getSearchPageResourceInfo(final String queryText)
