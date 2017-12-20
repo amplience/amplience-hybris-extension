@@ -14,7 +14,7 @@ Add the standard hybris Accelerator Apparel Store hostnames to your `/etc/hosts`
 127.0.0.1	apparel-uk.local. apparel-de.local.
 ```
 
-Checkout the project from mercurial (if you are reading this then presumably you have already done this).
+Checkout the project from github (if you are reading this then presumably you have already done this).
 
 Unzip the hybris folder from the `hybris-commerce-suite-5.7.x.x.zip` into your working copy folder.
 
@@ -106,11 +106,6 @@ This script runs the hybris `ant dist` command using the `dist.properties` file 
 This file configures how the distribution is built and what it contains.
 
 
-## Amplience Test Server
-
-Amplience have a test server running hybris. The server is running on AWS. Access to the server is limited. 
-The server is running on hostname `hybris.dev.adis.ws`.
-
 Setting up a new environment, selecting an appropriate DB, etc.. is beyond the scope of this document and is covered in the hybris setup documentation.
 
 
@@ -194,15 +189,6 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 ```
 
 
-### Test Server Websites
-
-* `hac` - <http://hybris.dev.adis.ws/>
-* `hmc` - <http://hybris.dev.adis.ws/hmc>
-* `productcockip` - <http://hybris.dev.adis.ws/productockpit>
-* `cmscockpit` - <http://hybris.dev.adis.ws/cmscockpit>
-* UK Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
-* German Apparel Demo Store - <https://apparel-uk.hybris.dev.adis.ws/yacceleratorstorefront/>
-
 ## Documentation
 
  * [ Installation and Setup Guide ](/documentation/AmplienceForSAPHybrisCommerceInstallationGuide.pdf)
@@ -224,9 +210,6 @@ There are two ways you can contribute to this project:
 
 Thank you for helping improve the quality of this integration!
 
-## Who do I talk to? ##
-
-* [Oliver Secluna](mailto:osecluna@amplience.com) - Product Owner, Integrations @ Amplience
 
 ## License and Copyright
 Copyright and included software attribution: See [ NOTICE ](NOTICE.md)
