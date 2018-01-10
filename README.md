@@ -215,5 +215,3 @@ Thank you for helping improve the quality of this integration!
 Copyright and included software attribution: See [ NOTICE ](NOTICE.md)
 
 This software is licensed under the Apache License, Version 2.0. See the [ License file ](LICENSE).
-
-
