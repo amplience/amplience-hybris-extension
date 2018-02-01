@@ -14,3 +14,9 @@ $categories=target(code, $catalogVersion)[unique=true]
 #
 INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
 ;sale;;
+
+#
+# Create hairandbeauty category used for MRHI
+#
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
+;hairandbeauty;;

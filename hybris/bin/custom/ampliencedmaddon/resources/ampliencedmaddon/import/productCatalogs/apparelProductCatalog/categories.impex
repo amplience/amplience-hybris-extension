@@ -9,3 +9,9 @@ $categories=target(code, $catalogVersion)[unique=true]
 #
 INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
 ;sale;;
+
+#
+# Create category for MRHI products
+#
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
+;hairandbeauty;;

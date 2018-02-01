@@ -4,6 +4,7 @@ $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[defa
 $supercategories=supercategories(code, $catalogVersion)
 $baseProduct=baseProduct(code,$catalogVersion)
 $approved=approvalstatus(code)[default='check']
+$lang=en
 
 #
 # Add some products to the sale category.
@@ -43,3 +44,35 @@ UPDATE ApparelProduct;code[unique=true];$catalogVersion;supercategories(code,$ca
 ;140458;;sale
 ;123922;;sale
 ;98951;;sale
+
+# Create demo (MRHI and spin) products
+INSERT_UPDATE ApparelProduct;code[unique=true];$catalogVersion;unit(code)[default='pieces'];supercategories(code,$catalogVersion);$approved;ean;name[lang=$lang];description[lang=$lang]
+;8910908695421;pieces;hairandbeauty;approved;8910908695421;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;8910908695422;;pieces;hairandbeauty;approved;8910908695422;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695415;;pieces;hairandbeauty;approved;7810908695415;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695416;;pieces;hairandbeauty;approved;7810908695416;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695417;;pieces;hairandbeauty;approved;7810908695417;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695418;;pieces;hairandbeauty;approved;7810908695418;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695419;;pieces;hairandbeauty;approved;7810908695419;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695420;;pieces;hairandbeauty;approved;7810908695420;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;7810908695416;;pieces;hairandbeauty;approved;7810908695416;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
+;718231-BLACK;;pieces;160400;approved;718231-BLACK;Black Leather Handbag;Large black leather handbag with zip pocket
+;718231-BROWN;;pieces;160400;approved;718231-BROWN;Brown Leather Handbag;Large brown leather handbag with zip pocket
+;718231-RED;;pieces;160400;approved;718231-RED;Red Leather Handbag;Large red leather handbag with zip pocket
+
+# A2475Crydom-03 and 8010574GridThermOEM also images on account.
+
+# Insert demo Product prices
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+;8910908695421;pieces;GBP;10;1;1;false
+;8910908695422;pieces;GBP;10;1;1;false
+;7810908695415;pieces;GBP;10;1;1;false
+;7810908695416;pieces;GBP;10;1;1;false
+;7810908695417;pieces;GBP;10;1;1;false
+;7810908695418;pieces;GBP;10;1;1;false
+;7810908695419;pieces;GBP;10;1;1;false
+;7810908695420;pieces;GBP;10;1;1;false
+;7810908695416;pieces;GBP;10;1;1;false
+;718231-BLACK;pieces;GBP;200;1;1;false
+;718231-BROWN;pieces;GBP;200;1;1;false
+;718231-RED;pieces;GBP;200;1;1;false
