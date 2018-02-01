@@ -56,13 +56,20 @@ public class ExamplePromoAmplienceSearchResultVariantProductPopulator extends Am
 		// into the search result so that we don't need to lookup the product model
 		final String productCode = this.<String>getValue(source, "code");
 		final ProductModel productModel = getProductService().getProductForCode(productCode);
+		
+		
 		if (productModel != null)
 		{
 			final boolean isNew = isProductNew(productModel);
 			final boolean isLowStock = isProductLowStock(target);
 			final boolean isOnSale = isProductOnSale(productModel);
+			final boolean isMrhi = isProductMrhi(productModel);
 
-			if (isNew || isLowStock || isOnSale)
+			if (isMrhi) {
+				final StringBuilder query = new StringBuilder("&$MRHI_v2_UK$");
+				return query.toString();
+			}
+			else if (isNew || isLowStock || isOnSale)
 			{
 				final StringBuilder query = new StringBuilder("&$roundel$");
 				if (isNew)
@@ -80,6 +87,7 @@ public class ExamplePromoAmplienceSearchResultVariantProductPopulator extends Am
 				return query.toString();
 			}
 		}
+		
 		return "";
 	}
 
@@ -99,6 +107,13 @@ public class ExamplePromoAmplienceSearchResultVariantProductPopulator extends Am
 		return getCategoryPathsForProduct(product).stream()
 			.anyMatch(categories -> categories.stream()
 				.anyMatch(this::isSaleCategory));
+	}
+
+	protected boolean isProductMrhi(final ProductModel product)
+	{
+		return getCategoryPathsForProduct(product).stream()
+			.anyMatch(categories -> categories.stream()
+				.anyMatch(this::isMrhiCategory));
 	}
 
 	protected Collection<List<CategoryModel>> getCategoryPathsForProduct(final ProductModel product)
@@ -145,5 +160,10 @@ public class ExamplePromoAmplienceSearchResultVariantProductPopulator extends Am
 	protected boolean isSaleCategory(final CategoryModel category)
 	{
 		return category.getCode().contains("sale");
+	}
+
+	protected boolean isMrhiCategory(final CategoryModel category)
+	{
+		return category.getCode().contains("hairandbeauty");
 	}
 }
