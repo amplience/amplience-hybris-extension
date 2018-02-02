@@ -3,15 +3,16 @@ $productCatalogName=Apparel Product Catalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $supercategories=source(code, $catalogVersion)[unique=true]
 $categories=target(code, $catalogVersion)[unique=true]
+$lang=en
 
 #
 # Create sale category used to trigger a product roundel
 #
-INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
-;sale;;
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup'];name[lang=$lang];description[lang=$lang]
+;sale;;categories;;Sale;Sale Category utilising roundels
 
 #
 # Create category for MRHI products
 #
-INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
-;hairandbeauty;;
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup'];name[lang=$lang];description[lang=$lang]
+;hairandbeauty;;categories;;Hair and Beauty;Hair and Beauty Category utilising Mobile Ready Hero Images

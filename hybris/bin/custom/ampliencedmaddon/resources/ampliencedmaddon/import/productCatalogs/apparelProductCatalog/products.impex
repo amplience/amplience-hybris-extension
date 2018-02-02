@@ -47,32 +47,30 @@ UPDATE ApparelProduct;code[unique=true];$catalogVersion;supercategories(code,$ca
 
 # Create demo (MRHI and spin) products
 INSERT_UPDATE ApparelProduct;code[unique=true];$catalogVersion;unit(code)[default='pieces'];supercategories(code,$catalogVersion);$approved;ean;name[lang=$lang];description[lang=$lang]
-;8910908695421;pieces;hairandbeauty;approved;8910908695421;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;8910908695422;;pieces;hairandbeauty;approved;8910908695422;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695415;;pieces;hairandbeauty;approved;7810908695415;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695416;;pieces;hairandbeauty;approved;7810908695416;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695417;;pieces;hairandbeauty;approved;7810908695417;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695418;;pieces;hairandbeauty;approved;7810908695418;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695419;;pieces;hairandbeauty;approved;7810908695419;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695420;;pieces;hairandbeauty;approved;7810908695420;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;7810908695416;;pieces;hairandbeauty;approved;7810908695416;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash 354ml
-;718231-BLACK;;pieces;160400;approved;718231-BLACK;Black Leather Handbag;Large black leather handbag with zip pocket
-;718231-BROWN;;pieces;160400;approved;718231-BROWN;Brown Leather Handbag;Large brown leather handbag with zip pocket
+;7810908695415;;pieces;hairandbeauty;approved;7810908695415;Tresemme Purify Conditioner 828ml;Tresemme Purify Conditioner in 828ml bottle. MRHI demo.
+;7810908695416;;pieces;hairandbeauty;approved;7810908695416;Tresemme Expert Conditioner 739ml;Tresemme Expert Conditioner in 739ml bottle. MRHI demo.
+;7810908695417;;pieces;hairandbeauty;approved;7810908695417;Tresemme Climate Protection Conditioner 828ml;Tresemme Climate Protection Conditioner in 828ml bottle. MRHI demo.
+;7810908695418;;pieces;hairandbeauty;approved;7810908695418;Tresemme Shampoo 739ml;Tresemme Shampoo with NEW Gentle Cleansing System in 739ml bottle. MRHI demo.
+;7810908695419;;pieces;hairandbeauty;approved;7810908695419;Tresemme Luxurious Moisture Shampoo 828ml;Tresemme Luxurious Moisture Shampoo in 828ml bottle. MRHI demo.
+;7810908695420;;pieces;hairandbeauty;approved;7810908695420;Tresemme Flawless Curls Conditioner 828ml;Tresemme Flawless Curls Conditioner in 828ml bottle. MRHI demo.
+;8910908695421;;pieces;hairandbeauty;approved;8910908695421;Dove Deep Moisture Body Wash 354ml;Dove Deep Moisture Body Wash in 354ml bottle. MRHI demo.
+;8910908695422;;pieces;hairandbeauty;approved;8910908695422;Dove Purely Pampering Body Wash 650ml;Dove Purely Pampering Body Wash in 650ml bottle. MRHI demo.
+;718231-BLACK;;pieces;160400;approved;718231-BLACK;Black Leather Handbag;Large black leather handbag with zip pocket. Spin demo.
+;718231-BROWN;;pieces;160400;approved;718231-BROWN;Brown Leather Handbag;Large brown leather handbag with zip pocket. Spin demo.
 ;718231-RED;;pieces;160400;approved;718231-RED;Red Leather Handbag;Large red leather handbag with zip pocket
 
 # A2475Crydom-03 and 8010574GridThermOEM also images on account.
 
-# Insert demo Product prices
+# Insert demo (MRHI and spin) Product prices
 INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
-;8910908695421;pieces;GBP;10;1;1;false
-;8910908695422;pieces;GBP;10;1;1;false
 ;7810908695415;pieces;GBP;10;1;1;false
 ;7810908695416;pieces;GBP;10;1;1;false
 ;7810908695417;pieces;GBP;10;1;1;false
 ;7810908695418;pieces;GBP;10;1;1;false
 ;7810908695419;pieces;GBP;10;1;1;false
 ;7810908695420;pieces;GBP;10;1;1;false
-;7810908695416;pieces;GBP;10;1;1;false
+;8910908695421;pieces;GBP;10;1;1;false
+;8910908695422;pieces;GBP;10;1;1;false
 ;718231-BLACK;pieces;GBP;200;1;1;false
 ;718231-BROWN;pieces;GBP;200;1;1;false
 ;718231-RED;pieces;GBP;200;1;1;false
