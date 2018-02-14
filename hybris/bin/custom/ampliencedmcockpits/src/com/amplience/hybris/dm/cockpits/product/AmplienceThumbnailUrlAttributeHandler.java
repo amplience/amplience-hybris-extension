@@ -153,7 +153,7 @@ public class AmplienceThumbnailUrlAttributeHandler implements DynamicAttributeHa
 			// Use image format & backoffice transformation template & add the product type (not the resolved product type)
 			return url + "&$" + getImageFormat() + "$&$backoffice$&productType=" + productModel.getItemtype();
 		}
-		return "";
+		return null;
 	}
 
 	@Override
