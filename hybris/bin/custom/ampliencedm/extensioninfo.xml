@@ -5,7 +5,7 @@
 
 <extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
-	<extension abstractclassprefix="Generated" classprefix="AmplienceDm" managername="AmplienceDmManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="ampliencedm" usemaven="false">
+	<extension abstractclassprefix="Generated" classprefix="AmplienceDm" managername="AmplienceDmManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="ampliencedm" usemaven="true">
 
 		<requires-extension name="hmc"/>
 		<requires-extension name="cms2"/>
