@@ -59,7 +59,7 @@
 	
 	
 	
-	<!--<alias name="defaultAmplienceSearchResultVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>-->
+	<alias name="defaultAmplienceSearchResultVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>
 	<bean id="defaultAmplienceSearchResultVariantProductPopulator" class="com.amplience.hybris.dm.populators.AmplienceSearchResultVariantProductPopulator"
 		  parent="variantCommerceSearchResultProductPopulator">
 		<property name="imageFormats">
