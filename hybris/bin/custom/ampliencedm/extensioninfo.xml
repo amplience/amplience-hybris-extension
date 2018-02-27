@@ -7,14 +7,12 @@
 
 	<extension abstractclassprefix="Generated" classprefix="AmplienceDm" managername="AmplienceDmManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="ampliencedm" usemaven="false">
 
-		<requires-extension name="hmc"/>
 		<requires-extension name="cms2"/>
 		<requires-extension name="commercefacades"/>
 		<requires-extension name="acceleratorservices"/>
 
 
 		<coremodule generated="true" manager="com.amplience.hybris.dm.jalo.AmplienceDmManager" packageroot="com.amplience.hybris.dm"/>
-		<hmcmodule extensionclassname="com.amplience.hybris.dm.hmc.AmplienceDmHMCExtension"/>
 
 	</extension>
 
