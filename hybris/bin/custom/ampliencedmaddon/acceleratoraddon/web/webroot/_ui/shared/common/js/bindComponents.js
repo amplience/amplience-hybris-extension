@@ -33,7 +33,6 @@ Amplience.Dm = {
 			options.client = window.ecommBridge.accountConfig.client;
 			options.imageBasePath = window.ecommBridge.accountConfig.imageBasePath;
 			options.locale = window.ecommBridge.site.locale;
-			options.cacheControl = Date.now();
 			options.ecommBridge = false;
 
 			options.errCallback = function () {
