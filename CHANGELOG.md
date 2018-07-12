@@ -26,3 +26,5 @@ Deleted stale backoffice config (amplliencedm-backoffice-config.xml)
 
 ### Added
 Initial version of Amplience Extension for SAP Hybris Commerce
+
+Tested with SAP Hybris Commerce version 5.7
