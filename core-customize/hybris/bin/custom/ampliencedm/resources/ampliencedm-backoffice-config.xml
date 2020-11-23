@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+
+<config xmlns="http://www.hybris.com/cockpit/config"
+		xmlns:base="http://www.hybris.com/cockpit/config/hybris"
+		xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+		xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch"
+		xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+		xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+
+	<!-- Config for items created in ampliencedm extension -->
+
+	<context merge-by="type" parent="CronJob" type="AmplienceProductImageStatusUpdateCronJob" component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:tab name="hmc.tab.cronjob.common">
+				<editorArea:section name="hmc.sec.amplience">
+					<editorArea:attribute qualifier="productQuery">
+						<editorArea:editor-parameter>
+							<editorArea:name>rows</editorArea:name>
+							<editorArea:value>5</editorArea:value>
+						</editorArea:editor-parameter>
+					</editorArea:attribute>
+					<editorArea:attribute qualifier="productCatalogVersions"/>
+					<editorArea:attribute qualifier="amplienceProductImageStatuses"/>
+					<editorArea:attribute qualifier="siteConfig"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context merge-by="type" parent="CronJob" type="AmplienceProductImageEmailReportCronJob" component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:tab name="hmc.tab.cronjob.common">
+				<editorArea:section name="hmc.sec.amplience">
+					<editorArea:attribute qualifier="productQuery">
+						<editorArea:editor-parameter>
+							<editorArea:name>rows</editorArea:name>
+							<editorArea:value>5</editorArea:value>
+						</editorArea:editor-parameter>
+					</editorArea:attribute>
+					<editorArea:attribute qualifier="productCatalogVersions"/>
+					<editorArea:attribute qualifier="reportLimit"/>
+					<editorArea:attribute qualifier="reportSubjectTemplate"/>
+					<editorArea:attribute qualifier="reportBodyTemplate"/>
+					<editorArea:attribute qualifier="sendReportWhenNoneMissing"/>
+					<editorArea:attribute qualifier="reportEmailAddresses"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<!-- Config for items enhanced by the ampliencedm extension -->
+
+	<context merge-by="module" type="Product" component="base">
+		<base:base>
+			<base:preview urlQualifier="amplienceThumbnailUrl"/>
+		</base:base>
+	</context>
+
+	<context merge-by="module" type="Product" component="editor-area">
+		<editorArea:editorArea name="editorArea">
+			<editorArea:tab name="hmc.tab.product.multimedia">
+				<editorArea:section name="hmc.sec.amplience" position="0">
+					<editorArea:attribute qualifier="amplienceImageStatus"/>
+					<editorArea:attribute qualifier="amplienceAltSwatch"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context merge-by="module" type="Product" component="advanced-search">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="amplienceImageStatus"/>
+				<advanced-search:field name="amplienceAltSwatch"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+	<context merge-by="module" type="BaseSite" component="editor-area">
+		<editorArea:editorArea name="base site editor">
+			<editorArea:tab name="hmc.tab.amplience">
+				<editorArea:section name="hmc.sec.amplience" position="0">
+					<editorArea:attribute qualifier="amplienceAccountIdentifier"/>
+					<editorArea:attribute qualifier="amplienceImageHostname"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context merge-by="type" type="AmplienceProductsMissingMediaView" parent="Item" component="listview">
+		<list-view:list-view>
+			<list-view:column qualifier="code"/>
+			<list-view:column qualifier="name"/>
+		</list-view:list-view>
+	</context>
+
+	<!--Explorer Tree -->
+	<context merge-by="module" component="explorer-tree">
+		<explorer-tree:explorer-tree xmlns="http://www.hybris.com/cockpitng/config/explorertree">
+			<explorer-tree:navigation-node id="hmc_type_tree_reporting">
+				<explorer-tree:navigation-node id="hmc_type_tree_amplience">
+					<explorer-tree:type-node code="AmplienceProductsMissingMediaView" id="AmplienceProductsMissingMediaView"/>
+				</explorer-tree:navigation-node>
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
+
+</config>

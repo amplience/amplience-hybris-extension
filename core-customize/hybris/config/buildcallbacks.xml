@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+
+<project name="hybris build callbacks" basedir="/../../">
+
+	<!-- Copy licence files into the distribution -->
+	<macrodef name="ampliencedm_before_dist">
+		<sequential>
+			<echo message="Copying Amplience licence files into dist" />
+			<copy todir="${HYBRIS_TEMP_DIR}/dist" preservelastmodified="true">
+				<fileset dir="${platformhome}/../../../..">
+					<include name="LICENSE" />
+					<include name="NOTICE.md" />
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
+
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<bean class="com.amplience.hybris.dm.config.AmplienceConfigData">
+		<description>
+			Data object to hold Amplience configuration
+		</description>
+		<property name="accountIdentifier" type="String"/>
+		<property name="imageHostname" type="String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+		<!--
+		 Extend the hybris Product data to add the name of the Amplience media set holding the product's media.
+		-->
+		<property name="amplienceMediaSet" type="String"/>
+	</bean>
+
+	<bean class="com.amplience.hybris.dm.data.AmplienceProductImageEmailReportData">
+		<description>
+			Data object to hold the missing images report data passed into the report email templates.
+		</description>
+		<property name="products" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ProductData>"/>
+		<property name="missingImageCount" type="Integer"/>
+		<property name="catalogVersions" type="java.util.List&lt;de.hybris.platform.commercefacades.catalog.data.CatalogVersionData>"/>
+	</bean>
+</beans>

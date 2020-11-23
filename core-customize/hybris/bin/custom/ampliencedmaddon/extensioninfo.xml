@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+
+	<extension abstractclassprefix="Generated" classprefix="AmplienceDmAddon" name="ampliencedmaddon">
+
+		<!-- you should add all required extensions to this list, except platform extensions which are automatically required -->
+		<requires-extension name="ampliencedm"/>
+		<requires-extension name="addonsupport"/>
+
+		<coremodule generated="true" manager="de.hybris.platform.jalo.extension.GenericManager" packageroot="com.amplience.hybris.dm.addon"/>
+
+	</extension>
+
+</extensioninfo>

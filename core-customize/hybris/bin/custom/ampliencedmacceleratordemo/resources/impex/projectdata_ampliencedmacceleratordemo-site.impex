@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2016-2020 Amplience
+#
+
+$siteUid=apparel-uk
+
+# Update CMS Site to match all URLs
+INSERT_UPDATE CMSSite;uid[unique=true];urlPatterns[mode=append]
+;$siteUid;"^((?!apparel-de).)*$"
+
+

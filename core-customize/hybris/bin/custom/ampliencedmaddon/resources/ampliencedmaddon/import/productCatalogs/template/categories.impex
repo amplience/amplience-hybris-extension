@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2016-2020 Amplience
+#
+
+######
+## PARAMETERS REQUIRED FOR THIS SCRIPT
+##
+##   * productCatalog   = product catalog id
+#######
+
+$productCatalogName = Apparel Product Catalog
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+$supercategories = source(code, $catalogVersion)[unique=true]
+$categories = target(code, $catalogVersion)[unique=true]
+
+#
+# Create sale category used to trigger a product roundel
+#
+INSERT_UPDATE Category; code[unique = true]; $catalogVersion; supercategories(code, $catalogVersion); allowedPrincipals(uid)[default = 'customergroup']
+                      ; sale               ;                ;

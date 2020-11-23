@@ -1,0 +1,23 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2016-2020 Amplience
+# -----------------------------------------------------------------------
+
+
+# Specifies the location of the spring context file added automatically to the global platform application context.
+ampliencedmaddon.application-context=ampliencedmaddon-spring.xml
+
+# Supported UiExperienceLevels for template sites
+storefront.supportedUiExperienceLevels.apparel-uk=DESKTOP,MOBILE
+storefront.supportedUiExperienceLevels.apparel-de=DESKTOP,MOBILE
+
+ampliencedmaddon.javascript.paths=\
+  /shared/common/js/bindComponents.js;\
+  /shared/common/viewer-kit-2.1.0/viewer.min.js
+
+ampliencedmaddon.css.paths=\
+  /shared/common/css/ampliencedm.css;\
+  /shared/common/viewer-kit-2.1.0/css/viewer.min.css;
+
+
+# Additional spring configuration injected into the storefront web context
+yacceleratorstorefront.additionalWebSpringConfigs.ampliencedmaddon=classpath\:/ampliencedmaddon/web/spring/ampliencedmaddon-web-spring.xml
