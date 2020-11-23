@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+
+	<extension abstractclassprefix="Generated" classprefix="AmplienceDm" managername="AmplienceDmManager" managersuperclass="de.hybris.platform.jalo.extension.Extension"
+			   name="ampliencedm" usemaven="false">
+
+		<requires-extension name="commercefacades"/>
+		<requires-extension name="acceleratorservices"/>
+
+		<coremodule generated="true" manager="com.amplience.hybris.dm.jalo.AmplienceDmManager" packageroot="com.amplience.hybris.dm"/>
+
+		<meta key="backoffice-module" value="true"/>
+
+	</extension>
+
+</extensioninfo>

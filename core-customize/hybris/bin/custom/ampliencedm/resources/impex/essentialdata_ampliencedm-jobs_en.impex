@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2016-2020 Amplience
+#
+
+$lang = en
+$emailResources = jar:de.hybris.platform.yacceleratorcore.setup.CoreSystemSetup&/ampliencedm/emails
+
+# Email velocity templates
+UPDATE RendererTemplate; code[unique = true]                      ; description[lang = $lang]                                      ; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                       ; amplience-missingImages-body-template    ; "Email body template for the missing product images report"    ; $emailResources/email-missingProductImages-body.vm
+                       ; amplience-missingImages-subject-template ; "Email subject template for the missing product images report" ; $emailResources/email-missingProductImages-subject.vm

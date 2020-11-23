@@ -1,0 +1,16 @@
+#
+# Copyright (c) 2016-2020 Amplience
+#
+
+######
+## PARAMETERS REQUIRED FOR THIS SCRIPT
+##
+##   * contentCatalog   - content catalog id
+##   * addonExtensionName - extension name of the ui addon
+#######
+
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+# Update ProductDetailsPageTemplate to use the ampliencedmaddon product page template
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]         ; frontendTemplateName
+						  ;                          ; ProductDetailsPageTemplate ; addon:/ampliencedmaddon/pages/product/productLayoutPage

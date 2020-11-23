@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2016-2020 Amplience
+#
+
+
+#
+# Import the basic AmplienceProductImageStatusUpdateCronJob
+#
+INSERT_UPDATE AmplienceProductImageStatusUpdateCronJob; code[unique = true]                      ; job(code)                                       ; singleExecutable; sessionLanguage(isocode)
+                                                      ; AmplienceProductImageStatusUpdateCronJob ; amplienceProductImageStatusUpdateJobPerformable ; false           ; en
+
+INSERT_UPDATE AmplienceProductImageEmailReportCronJob; code[unique = true]                     ; job(code)                                      ; singleExecutable; sessionLanguage(isocode)
+                                                     ; AmplienceProductImageEmailReportCronJob ; amplienceProductImageEmailReportJobPerformable ; false           ; en
+
+INSERT_UPDATE RendererTemplate; code[unique = true]                      ; contextClass                                                      ; rendererType(code)[default = 'velocity']
+                              ; amplience-missingImages-body-template    ; com.amplience.hybris.dm.data.AmplienceProductImageEmailReportData ;
+                              ; amplience-missingImages-subject-template ; com.amplience.hybris.dm.data.AmplienceProductImageEmailReportData ;

@@ -1,0 +1,66 @@
+#
+# Copyright (c) 2016-2020 Amplience
+#
+#% impex.setLocale( Locale.GERMAN );
+
+# Demo products
+
+# Macros / Replacement Parameter definitions
+$lang=en
+$productCatalog=apparelProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Staged']))
+$approved=approvalstatus(code)[default='approved']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=eu-vat-full]
+
+
+INSERT_UPDATE ApparelProduct;code[unique=true];$catalogVersion;unit(code)[default='pieces'];supercategories(code,$catalogVersion);varianttype(code);$approved;$taxGroup;ean;genders(code)
+;test_product;;pieces;190100,snow,Special Blend;ApparelStyleVariantProduct;;;;MALE
+
+INSERT_UPDATE ApparelStyleVariantProduct;code[unique=true];$catalogVersion;$baseProduct;swatchColors(code);unit(code)[default='pieces'];varianttype(code);$approved
+;test_1;;test_product;BLACK;;ApparelSizeVariantProduct;
+;test_2;;test_product;RED;;ApparelSizeVariantProduct;
+;test_3;;test_product;WHITE;;ApparelSizeVariantProduct;
+;test_4;;test_product;BLUE;;ApparelSizeVariantProduct;
+
+INSERT_UPDATE ApparelSizeVariantProduct;code[unique=true];$catalogVersion;$baseProduct;unit(code)[default='pieces'];;$approved;$taxGroup
+;test_1a;;test_1;;;;
+;test_2a;;test_2;;;;
+;test_3a;;test_3;;;;
+;test_4a;;test_4;;;;
+
+UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang];ApparelStyleVariantProduct.style[lang=$lang];ApparelSizeVariantProduct.size[lang=$lang]
+;test_product;;"Test Product";"<p>The Amplience Dynamic Media test product.";"A test product that demonstrates the different Amplience Dynamic Media product gallery media options.";;;;
+;test_1;;"Test Product black";;;black;;;
+;test_1a;;"Test Product black L";;;;L;;
+;test_2;;"Test Product red";;;red;;;
+;test_2a;;"Test Product red L";;;;L;;
+;test_3;;"Test Product white";;;white;;;
+;test_3a;;"Test Product white L";;;;L;;
+;test_4;;"Test Product blue";;;blue;;;
+;test_4a;;"Test Product blue L";;;;L;;
+
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+;test_1a;pieces;GBP;113,36;1;1;false
+;test_1a;pieces;EUR;139,95;1;1;false
+;test_2a;pieces;GBP;113,36;1;1;false
+;test_2a;pieces;EUR;139,95;1;1;false
+;test_3a;pieces;GBP;113,36;1;1;false
+;test_3a;pieces;EUR;139,95;1;1;false
+;test_4a;pieces;GBP;113,36;1;1;false
+;test_4a;pieces;EUR;139,95;1;1;false
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='ap_warehouse_s',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+;10;;;0;0;test_1a;0
+;10;;;0;0;test_2a;0
+;10;;;0;0;test_3a;0
+;10;;;0;0;test_4a;0
+
+# Sync the apparelProductCatalog
+"#%
+import de.hybris.platform.core.Registry;
+import de.hybris.platform.commerceservices.setup.SetupSyncJobService;
+import de.hybris.platform.commerceservices.setup.impl.DefaultSetupSyncJobService;
+
+SetupSyncJobService setupSyncJobService = Registry.getApplicationContext().getBean(""setupSyncJobService"", DefaultSetupSyncJobService.class);
+setupSyncJobService.executeCatalogSyncJob(""apparelProductCatalog"");"
