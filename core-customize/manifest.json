@@ -163,17 +163,17 @@
 				{
 					"key": "storefrontContextRoot",
 					"value": "/yacceleratorstorefront"
-				},
-				{
-                    "name": "ycommercewebservices",
-                    "contextPath": "/rest"
-                }
+				}
 			],
 			"webapps": [
 				{
 					"name": "hac",
 					"contextPath": "/hac"
-				}
+				},
+				{
+                    "name": "ycommercewebservices",
+                    "contextPath": "/rest"
+                }
 			]
 		}
 	],
