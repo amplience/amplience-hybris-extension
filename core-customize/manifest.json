@@ -49,7 +49,10 @@
 				"cloudcommons",
 				"cloudhotfolder"
 			]
-		}
+		},
+        "solr": {
+            "location": "/hybris/config/solr"
+        }
 	},
 	"properties": [
 		{
