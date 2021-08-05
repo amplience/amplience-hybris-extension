@@ -1,14 +1,13 @@
-# Amplience Extension for SAP Hybris Commerce
+# Amplience Extension for SAP Commerce Cloud
+
 
 ## Local Development
 
 ### Setting up development environment
 
-You need Oracle Java 1.8 JDK. You need java in your path and you need your `JAVA_HOME` set correctly.
-Make sure that you have the JCE cryptography extensions installed into this version of java. 
-If you upgrade Java make sure that you install the JCE cryptography extensions into the new version of Java.
+You need Java 11 JDK. You need java in your path and you need your `JAVA_HOME` set correctly.
 
-Add the standard hybris Accelerator Apparel Store hostnames to your `/etc/hosts` file:
+Add the standard SAP Commerce Accelerator Apparel Store hostnames to your `/etc/hosts` file:
 
 ```
 127.0.0.1	apparel-uk.local. apparel-de.local.
@@ -16,33 +15,40 @@ Add the standard hybris Accelerator Apparel Store hostnames to your `/etc/hosts`
 
 Checkout the project from github (if you are reading this then presumably you have already done this).
 
-Unzip the hybris folder from the `hybris-commerce-suite-5.7.x.x.zip` into your working copy folder.
+Unzip the SAP Commerce folder from the `CXCOM200500P_2-70004955.zip` into the `core-customize` sub-folder of your
+repository.
 
-Run the install script from the root of the working copy.
+Run the `install.sh` script from the root of the repository.
 
 This script will:
 * install the `ampliencedmaddon` into the `yacceleratorstorefront` extension.
 * Build the project.
-* Initialise the hybris DB.
+* Initialise the SAP Commerce DB.
 
 ```bash
 ./install.sh
 ```
 
-Once the system has initialised you can open the Intellij IDEA project which is in the root of the working copy.
-
+Once the system has initialised you can open the Intellij IDEA project which is in the root of the repository.
 
 ### Building the code
 
-The code is built using `ant` run from the `hybris/bin/platform` folder.
+The code is built using `ant` run from the `core-customize/hybris/bin/platform` folder.
 
 ```bash
-cd hybris/bin/platform
+cd core-customize/hybris/bin/platform
 . ./setantenv.sh
 ant clean all
 ```
 
 ### Running the jUnit tests
+
+To prepare the environment to run the jUnit tests the test tenant must be initialised, this only needs to be done
+once before the tests are executed.
+
+```
+ant yunitinit
+```
 
 Execute the following ant command to run the junit unittests for the Amplience extensions.
 
@@ -50,90 +56,83 @@ Execute the following ant command to run the junit unittests for the Amplience e
 ant unittests -Dtestclasses.extensions="ampliencedm,ampliencedmaddon,ampliencedmbackoffice,ampliencedmcockpits"
 ```
 
+### Running SAP Commerce
 
-### Running hybris
-
-Hybris includes a distribution of tomcat and runs everything from a single start script.
-The start script is run from the `hybris/bin/platform` folder.
-
+SAP Commerce includes a distribution of tomcat and runs everything from a single start script.
+The start script is run from the `core-customize/hybris/bin/platform` folder.
 
 ```bash
-cd hybris/bin/platform
+cd core-customize/hybris/bin/platform
 ./hybrisserver.sh
 ```
 
 The `hybrisserver.sh` script supports the following parameters:
-* `run` - Starts the hybris server attached to the current console. This is the default option.
+* `run` - Starts the SAP Commerce server attached to the current console. This is the default option.
 * `start` - Start in the background as a daemon process.
 * `stop` - Stop if running as a daemon process.
-* `debug` - Run the hybris server on attached to the console in a mode where it listens for a Java debugger to attach on port `8000`.
+* `debug` - Run the SAP Commerce server on attached to the console in a mode where it listens for a Java debugger to
+  attach on port `8000`.
 
 When running attached to the current console a `Ctrl-C` is used to trigger shutdown.
 
+### SAP Commerce Websites and Cockpits
 
-### Hybris Websites and Cockpits
+The SAP Commerce application server will by default open 2 ports, `9001` for http traffic and `9002` for https traffic.
 
-The hybris application server will by default open 2 ports, `9001` for http traffic and `9002` for https traffic.
-
-* `hac` - <http://localhost:9001/> The Hybris Administration Console is used to monitor or manage the hybris node/cluster.
-* `hmc` - <http://localhost:9001/hmc> The Hybris Management Console is used to view and edit the data stored in the hybris database.
-* `productcockip` - <http://localhost:9001/productockpit> The Product Cockpit is used to create and manage products and categories.
-* `cmscockpit` - <http://localhost:9001/cmscockpit> The CMS Cockpit is used to manage content displayed on the storefronts.
+* `hac` - <http://localhost:9001/> The SAP Commerce Administration Console is used to monitor or manage the SAP Commerce node/cluster.
+* `Backoffice` - <http://localhost:9001/backoffice> The Backoffice used to view and edit the data stored in the SAP Commerce system.
 * UK Apparel Demo Store - <https://apparel-uk.local:9002/yacceleratorstorefront/> The UK version of the Apparel demo store.
 * German Apparel Demo Store - <https://apparel-de.local:9002/yacceleratorstorefront/> The German version of the Apparel demo store.
 
-Users
+Default Users
 
-* User: `admin` Password: `nimda` - Used to login to the `hac` or `hmc`.
-* User: `productmanager` Password: `1234` - Used to login to the `productcockpit`.
-* User: `cmsmanager` Password: `1234` - Used to login to the `cmscockpit`.
+* User: `admin` Password: `nimda` - Used to login to the `hac` or `Backoffice`.
 
+> Note that the `admin` user password is set during initialisation from the value of the `initialpassword.admin` property.
 
 
 ## Distribution
 
 ### Building a distribution for 3rd parties
 
-To build a distribution of the Amplience Extension for SAP Hybris Commerce, run:
+To build a distribution of the Amplience Extension for SAP Commerce, run:
 
 ```bash
 ./dist.sh
 ```
 
-The distribution zip will be output to `hybris/temp/hybris/dists`.
+The distribution zip will be output to the root of the repository.
 
-This script runs the hybris `ant dist` command using the `dist.properties` file in the root of the workspace.
+This script runs the SAP Commerce `ant dist` command using the `dist.properties` file in the root of the repository.
 This file configures how the distribution is built and what it contains.
 
-
-Setting up a new environment, selecting an appropriate DB, etc.. is beyond the scope of this document and is covered in the hybris setup documentation.
-
+Setting up a new environment, selecting an appropriate DB, etc.. is beyond the scope of this document and is covered in
+the SAP Commerce setup documentation.
 
 ### Building the Artifacts
 
 The artifacts to deploy are built in either a dev or CI environment.
-To build the deployment artifacts run the following `ant` command from the `hybris/bin/platform` folder.
+To build the deployment artifacts run the following `ant` command from the `core-customize/hybris/bin/platform` folder.
 
 ```bash
 ant clean all production
 ```
 
-The artifact will be output to `hybris/temp/hybris/hybrisServer`. The following files will be created:
-
+The artifact will be output to `core-customize/hybris/temp/hybris/hybrisServer`. The following files will be created:
 * `hybrisServer-AllExtensions.zip`
 * `hybrisServer-Config.zip`
 * `hybrisServer-Licence.zip`
 * `hybrisServer-Platform.zip`
 
+### Deployment (On-Prem)
 
-### Deployment
+The artifacts above need to be copied to the test server. `rsync` or `scp` are good ways of copying these files up to
+the test server. The files should be copied into the `/home/hybris/artifacts` folder on the test server.
 
-The artifacts above need to be copied to the test server. `rsync` or `scp` are good ways of copying these files up to the test server. 
-The files should be copied into the `/home/hybris/artifacts` folder on the test server.
+On the test server the SAP Commerce instance is running as the `hybris` user and the application is deployed into the
+`/home/hybris/hybris/` folder.
 
-On the test server the hybris instance is running as the `hybris` user and the application is deployed into the `/home/hybris/hybris/` folder.
-
-Stop the current instance of hybris and remove the old binaries:
+Stop the current instance of SAP Commerce and remove the old binaries:
 
 ```bash
 cd /home/hybris/hybris/bin/platform
@@ -155,11 +154,7 @@ unzip -o -d /home/hybris hybrisServer-Licence.zip
 cp mysql-connector-java-5.1.38-bin.jar /home/hybris/hybris/bin/platform/lib/dbdriver/
 ```
 
-Append environment specific configuration to the hybris config file:
-
-```bash
-cat /home/hybris/hybris/config/hybris.properties >> /home/hybris/hybris/config/local.properties
-```
+Append any environment specific configuration to the SAP Commerce config file.
 
 Run the `ant` build script (yes as part of deployment):
 
@@ -169,13 +164,13 @@ cd /home/hybris/hybris/bin/platform
 ant clean all
 ```
 
-Fix the user used to run the hybris application server:
+Fix the user used to run the SAP Commerce application server:
 
 ```bash
 sed -i "s/#RUN_AS_USER=/RUN_AS_USER=hybris/" /home/hybris/hybris/bin/platform/tomcat/bin/wrapper.sh
 ```
 
-Start the hybris application server:
+Start the SAP Commerce application server:
 
 ```bash
 cd /home/hybris/hybris/bin/platform
@@ -191,27 +186,34 @@ curl --output /dev/null --silent --connect-timeout 30 --max-time 240 http://loca
 
 ## Documentation
 
- * [ Installation and Setup Guide ](/documentation/AmplienceForSAPHybrisCommerceInstallationGuide.pdf)
- * [ Test Cases ](/documentation/AmplienceForSAPHybrisCommerceTestCases.pdf)
- * [ Business User Guide](documentation/AmplienceForSAPHybrisCommerceBusinessUserGuide.pdf)
- * [ System Integration Guide ](AmplienceForSAPHybrisCommerceSystemIntegrationGuide)
+ * [ Install Guide ](docs/Amplience-For-SAP-Commerce-Install-Guide.md)
+ * [ Integration Guide](docs/Amplience-For-SAP-Commerce-Integration.md)
  * See also the [ Amplience Customer Hub ](http://hub.amplience.com/display/DEV/SAP+Hybris+Commerce)
 
-## Changelog ##
+
+## Changelog
 
 * For version history see the [Changelog](CHANGELOG.md)
 
-## Contribution guidelines ##
+
+## Contribution guidelines
+
 There are two ways you can contribute to this project:
 
-1. File an `Issue` using the `Issues` facility in the Navigation Menu.  There are no guarantees that issues that are filed will be addressed or fixed within a certain time frame, but logging issues is an important step in improving the quality of these integrations.
+1. File an `Issue` in GitHub using the `Issues` facility in the Navigation Menu. There are no guarantees that issues
+that are filed will be addressed or fixed within a certain time frame, but logging issues is an important step in
+improving the quality of this integrations.
 
-2. If you have a suggested code fix, please fork this repository and issue a 'pull request' against it.  Amplience will evaluate the pull request, test it, and possibly integrate it back into the main code branch.  Even if the Amplience partner does not choose to adopt your pull request, the pull request is now logged with this repository where other customers, clients, and integrators can see it and any of them can choose to adopt your suggested changes.
+2. If you have a suggested code fix, please fork this repository and issue a `pull request` against it. Amplience will
+evaluate the pull request, test it, and possibly integrate it back into the main code branch. Even if the Amplience
+does not choose to adopt your pull request, the pull request is now logged with this repository where other integrators
+can see it and any of them can choose to adopt your suggested changes.
 
 Thank you for helping improve the quality of this integration!
 
 
 ## License and Copyright
+
 Copyright and included software attribution: See [ NOTICE ](NOTICE.md)
 
 This software is licensed under the Apache License, Version 2.0. See the [ License file ](LICENSE).

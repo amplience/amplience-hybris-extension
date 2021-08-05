@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hybrisconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="resources/schemas/extensions.xsd">
+	<extensions>
+		<path dir="${HYBRIS_BIN_DIR}"/>
+
+		<extension name='acceleratorstorefrontcommons'/>
+		<extension name='adaptivesearchsolr'/>
+		<extension name='apparelstore'/>
+		<extension name='cmsbackoffice'/>
+		<extension name='pcmbackoffice'/>
+		<extension name='yacceleratorbackoffice'/>
+		<extension name='yacceleratorinitialdata'/>
+		<extension name='yacceleratorstorefront'/>
+
+		<!-- Amplience DM extensions -->
+		<extension name="ampliencedm"/>
+		<extension name="ampliencedmacceleratordemo"/>
+		<extension name="ampliencedmaddon"/>
+
+	</extensions>
+</hybrisconfig>

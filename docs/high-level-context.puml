@@ -1,0 +1,40 @@
+@startuml
+!include <c4/C4_Container.puml>
+
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+'LAYOUT_WITH_LEGEND()
+
+title Amplience Extension High Level Architecture
+
+Person(customer, Customer, "<$user> <$mobile_user>\n A customer of the e-commerce system using a web browser")
+
+System_Boundary(c1, "SAP Commerce") {
+    Container(sap_web, "Storefront", "SAP", "SAP Commerce Storefront. Includes the Amplience AddOn")
+    Container(sap_backoffice, "Backoffice", "SAP", "Backoffice for managing products and running jobs")
+}
+
+System_Boundary(c2, "Amplience") {
+    Container(amplience_cdn, "Amplience CDN", "Amplience", "Global CDN for media")
+    Container(amplience_dm, "Amplience DM", "Amplience", "Amplience stores, manages, and serves the product media .")
+    System_Ext(sftp, "SFTP", "SFTP used to upload media to Amplience")
+}
+
+Person(merchant, Merchant, "<$user>\n The merchant managing products and media" )
+
+Rel(customer, sap_web, "Requests web pages", "HTTPS")
+Rel(customer, amplience_cdn, "Requests product media", "HTTPS")
+
+Rel(amplience_cdn, amplience_dm, "Uses")
+Rel(amplience_dm, sftp, "Imports media")
+
+Rel_U(sap_backoffice, amplience_dm, "Checks for existence of media")
+
+Rel_U(merchant, sap_backoffice, "Manages products", "HTTPS")
+Rel_U(merchant, amplience_dm, "Manages product media", "HTTPS")
+Rel_U(merchant, sftp, "Uploads product media", "SFTP")
+
+Lay_D(sap_web, sap_backoffice)
+Lay_R(c1, c2)
+@enduml

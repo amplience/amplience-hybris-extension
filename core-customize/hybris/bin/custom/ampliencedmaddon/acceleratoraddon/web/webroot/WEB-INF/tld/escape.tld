@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+		version="2.1">
+	<tlib-version>1.0</tlib-version>
+	<short-name>escape</short-name>
+	<uri>http://amplience.com/hybris/tld/escape</uri>
+
+	<function>
+		<description>Escape a java string so that it is safe to use within a JavaScript quoted string.</description>
+		<name>js</name>
+		<function-class>org.apache.commons.lang3.StringEscapeUtils</function-class>
+		<function-signature>java.lang.String escapeEcmaScript(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<description>Escapes the characters in a string using Json String rules.</description>
+		<name>json</name>
+		<function-class>org.apache.commons.lang3.StringEscapeUtils</function-class>
+		<function-signature>java.lang.String escapeJson(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<description>Escape a java string so that it is safe to use within an HTML 4 quoted attribute value.</description>
+		<name>html</name>
+		<function-class>org.apache.commons.lang3.StringEscapeUtils</function-class>
+		<function-signature>java.lang.String escapeHtml4(java.lang.String)</function-signature>
+	</function>
+
+</taglib>

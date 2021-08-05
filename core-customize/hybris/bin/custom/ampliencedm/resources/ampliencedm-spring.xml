@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2016-2020 Amplience
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<alias alias="amplienceThumbnailUrlAttributeHandler" name="defaultAmplienceThumbnailUrlAttributeHandler"/>
+	<bean id="defaultAmplienceThumbnailUrlAttributeHandler" class="com.amplience.hybris.dm.model.AmplienceThumbnailUrlAttributeHandler">
+		<property name="impersonationService" ref="impersonationService"/>
+		<property name="amplienceProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+		<property name="userService" ref="userService"/>
+		<property name="imageFormat" value="product"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="sessionService" ref="sessionService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+	</bean>
+
+	<alias name="defaultProductAmplienceMediaSetPopulator" alias="productAmplienceMediaSetPopulator"/>
+	<bean id="defaultProductAmplienceMediaSetPopulator" class="com.amplience.hybris.dm.populators.ProductAmplienceMediaSetPopulator">
+		<property name="amplienceProductResolver" ref="amplienceProductResolver"/>
+		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+	</bean>
+
+	<!-- Add the ProductAmplienceMediaSetPopulator to the productBasicPopulatorList -->
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="productBasicPopulatorList"/>
+		<property name="add" ref="productAmplienceMediaSetPopulator"/>
+	</bean>
+
+	<!-- Replace product image populators -->
+	<alias name="amplienceProductPrimaryImagePopulator" alias="acceleratorProductPrimaryImagePopulator"/>
+	<bean id="amplienceProductPrimaryImagePopulator" parent="defaultProductPrimaryImagePopulator" class="com.amplience.hybris.dm.populators.AmplienceProductPrimaryImagePopulator">
+		<property name="amplienceProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+		<property name="imageFormats">
+			<list>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+				<value>cartIcon</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Remove the default productGalleryImagesPopulator from the productGalleryPopulatorList -->
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="productGalleryPopulatorList"/>
+		<property name="remove" ref="productGalleryImagesPopulator"/>
+	</bean>
+
+
+	<alias name="amplienceVariantOptionDataPopulator" alias="defaultAcceleratorVariantOptionDataPopulator"/>
+	<bean id="amplienceVariantOptionDataPopulator" class="com.amplience.hybris.dm.populators.AmplienceVariantOptionDataPopulator" parent="defaultVariantOptionDataPopulator">
+		<property name="typeService" ref="typeService"/>
+		<property name="imageFormatProductImageUrlResolverMap">
+			<map>
+				<entry key="styleSwatch" value-ref="amplienceProductSwatchUrlResolver"/>
+			</map>
+		</property>
+		<property name="defaultProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+		<property name="variantAttributeMapping">
+			<map>
+				<entry key="ApparelStyleVariantProduct.style" value="styleSwatch"/>
+			</map>
+		</property>
+	</bean>
+
+
+	<!--<alias name="defaultAmplienceSearchResultVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>-->
+	<bean id="defaultAmplienceSearchResultVariantProductPopulator" class="com.amplience.hybris.dm.populators.AmplienceSearchResultVariantProductPopulator"
+		  parent="variantCommerceSearchResultProductPopulator">
+		<property name="imageFormats">
+			<list>
+				<value>thumbnail</value>
+				<value>product</value>
+			</list>
+		</property>
+		<property name="productImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+	</bean>
+
+	<alias name="examplePromoAmplienceSearchResultVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>
+	<bean id="examplePromoAmplienceSearchResultVariantProductPopulator" class="com.amplience.hybris.dm.populators.ExamplePromoAmplienceSearchResultVariantProductPopulator"
+		  parent="defaultAmplienceSearchResultVariantProductPopulator">
+		<property name="commerceCategoryService" ref="commerceCategoryService"/>
+	</bean>
+
+	<alias name="defaultAmplienceEmailContextProductConverter" alias="amplienceEmailContextProductConverter"/>
+	<bean id="defaultAmplienceEmailContextProductConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.product.data.ProductData"/>
+		<property name="populators">
+			<list>
+				<ref bean="amplienceEmailContextProductPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultAmplienceEmailContextProductPopulator" alias="amplienceEmailContextProductPopulator"/>
+	<bean id="defaultAmplienceEmailContextProductPopulator"
+		  class="com.amplience.hybris.dm.populators.AmplienceEmailContextProductPopulator">
+	</bean>
+
+
+	<alias name="defaultAmplienceEmailContextCatalogVersionConverter" alias="amplienceEmailContextCatalogVersionConverter"/>
+	<bean id="defaultAmplienceEmailContextCatalogVersionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.catalog.data.CatalogVersionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="amplienceEmailContextCatalogVersionPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultAmplienceEmailContextCatalogVersionPopulator" alias="amplienceEmailContextCatalogVersionPopulator"/>
+	<bean id="defaultAmplienceEmailContextCatalogVersionPopulator"
+		  class="com.amplience.hybris.dm.populators.AmplienceEmailContextCatalogVersionPopulator">
+	</bean>
+
+	<alias name="defaultAmplienceExportImages" alias="amplienceExportImages"/>
+	<bean id="defaultAmplienceExportImages" class="com.amplience.hybris.dm.util.ExportImages" scope="prototype">
+		<constructor-arg name="sessionService" ref="sessionService"/>
+		<constructor-arg name="userService" ref="userService"/>
+		<constructor-arg name="flexibleSearchService" ref="flexibleSearchService"/>
+		<constructor-arg name="modelService" ref="modelService"/>
+		<constructor-arg name="mimeService" ref="mimeService"/>
+		<constructor-arg name="mediaContainerService" ref="mediaContainerService"/>
+		<constructor-arg name="catalogVersionService" ref="catalogVersionService"/>
+		<constructor-arg name="mediaService" ref="mediaService"/>
+		<constructor-arg name="imageFormatMapping" ref="imageFormatMapping"/>
+		<constructor-arg name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+	</bean>
+
+	<alias name="defaultAmplienceDeleteImages" alias="amplienceDeleteImages"/>
+	<bean id="defaultAmplienceDeleteImages" class="com.amplience.hybris.dm.util.DeleteImages" scope="prototype">
+		<constructor-arg name="sessionService" ref="sessionService"/>
+		<constructor-arg name="userService" ref="userService"/>
+		<constructor-arg name="flexibleSearchService" ref="flexibleSearchService"/>
+		<constructor-arg name="modelService" ref="modelService"/>
+		<constructor-arg name="mediaContainerService" ref="mediaContainerService"/>
+		<constructor-arg name="catalogVersionService" ref="catalogVersionService"/>
+		<constructor-arg name="mediaService" ref="mediaService"/>
+	</bean>
+
+	<!-- Service to load Amplience configuration -->
+	<alias name="defaultAmplienceConfigService" alias="amplienceConfigService"/>
+	<bean id="defaultAmplienceConfigService" class="com.amplience.hybris.dm.config.impl.DefaultAmplienceConfigService">
+		<property name="baseSiteService" ref="baseSiteService"/>
+		<property name="configurationService" ref="configurationService"/>
+	</bean>
+
+	<alias name="defaultAmplienceIdentifierSanitizer" alias="amplienceIdentifierSanitizer"/>
+	<bean id="defaultAmplienceIdentifierSanitizer" class="com.amplience.hybris.dm.product.impl.DefaultAmplienceIdentifierSanitizer"/>
+
+	<alias name="defaultAmplienceProductResolver" alias="amplienceProductResolver"/>
+	<bean id="defaultAmplienceProductResolver" class="com.amplience.hybris.dm.product.impl.DefaultAmplienceProductResolver"/>
+
+	<alias name="defaultAmplienceUnknownProductImageUrlResolver" alias="amplienceUnknownProductImageUrlResolver"/>
+	<bean id="defaultAmplienceUnknownProductImageUrlResolver" class="com.amplience.hybris.dm.product.impl.AmplienceUnknownProductImageUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="amplienceConfigService" ref="amplienceConfigService"/>
+		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
+	</bean>
+
+	<alias name="defaultAmplienceProductImageUrlResolver" alias="amplienceProductImageUrlResolver"/>
+	<bean id="defaultAmplienceProductImageUrlResolver" class="com.amplience.hybris.dm.product.impl.AmplienceProductImageUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="amplienceConfigService" ref="amplienceConfigService"/>
+		<property name="amplienceSeoImageNameStrategy" ref="amplienceSeoImageNameStrategy"/>
+		<property name="amplienceProductResolver" ref="amplienceProductResolver"/>
+		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
+		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+		<property name="defaultProductImageUrlResolver" ref="amplienceUnknownProductImageUrlResolver"/>
+	</bean>
+
+	<alias name="defaultAmplienceProductSwatchUrlResolver" alias="amplienceProductSwatchUrlResolver"/>
+	<bean id="defaultAmplienceProductSwatchUrlResolver" class="com.amplience.hybris.dm.product.impl.AmplienceProductSwatchUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="amplienceConfigService" ref="amplienceConfigService"/>
+		<property name="amplienceSeoImageNameStrategy" ref="amplienceSeoImageNameStrategy"/>
+		<property name="amplienceProductResolver" ref="amplienceProductResolver"/>
+		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
+		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+		<property name="defaultProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+	</bean>
+
+	<alias name="defaultAmplienceProductImageMetadataUrlResolver" alias="amplienceProductImageMetadataUrlResolver"/>
+	<bean id="defaultAmplienceProductImageMetadataUrlResolver" class="com.amplience.hybris.dm.product.impl.AmplienceProductImageMetadataUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="amplienceConfigService" ref="amplienceConfigService"/>
+		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+	</bean>
+
+	<alias name="defaultAmplienceProductSwatchMetadataUrlResolver" alias="amplienceProductSwatchMetadataUrlResolver"/>
+	<bean id="defaultAmplienceProductSwatchMetadataUrlResolver" class="com.amplience.hybris.dm.product.impl.AmplienceProductSwatchMetadataUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="amplienceConfigService" ref="amplienceConfigService"/>
+		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+	</bean>
+
+	<alias name="defaultAmplienceSeoImageNameStrategy" alias="amplienceSeoImageNameStrategy"/>
+	<bean id="defaultAmplienceSeoImageNameStrategy" class="com.amplience.hybris.dm.product.impl.DefaultAmplienceSeoImageNameStrategy">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="commerceCategoryService" ref="commerceCategoryService"/>
+	</bean>
+
+	<alias name="defaultAmplienceLocaleStringStrategy" alias="amplienceLocaleStringStrategy"/>
+	<bean id="defaultAmplienceLocaleStringStrategy" class="com.amplience.hybris.dm.localization.impl.DefaultAmplienceLocaleStringStrategy">
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+	</bean>
+
+
+	<bean id="amplienceProductImageStatusUpdateJobPerformable" class="com.amplience.hybris.dm.jobs.AmplienceProductImageStatusUpdateJobPerformable" parent="abstractJobPerformable">
+		<property name="amplienceProductImageMetadataUrlResolver" ref="amplienceProductImageMetadataUrlResolver"/>
+		<property name="typeService" ref="typeService"/>
+		<property name="impersonationService" ref="impersonationService"/>
+		<property name="amplienceProductSwatchMetadataUrlResolver" ref="amplienceProductSwatchMetadataUrlResolver"/>
+	</bean>
+
+	<bean id="amplienceProductImageEmailReportJobPerformable" class="com.amplience.hybris.dm.jobs.AmplienceProductImageEmailReportJobPerformable" parent="abstractJobPerformable">
+		<property name="rendererService" ref="rendererService"/>
+		<property name="emailContextFactory" ref="emailContextFactory"/>
+		<property name="amplienceEmailContextProductConverter" ref="amplienceEmailContextProductConverter"/>
+		<property name="amplienceEmailContextCatalogVersionConverter" ref="amplienceEmailContextCatalogVersionConverter"/>
+	</bean>
+
+
+	<!--
+		Fix for incorrectly named bean in commerceservices-spring-solrfacetsearch.xml.
+		The bean exists in commerceservices-spring-solrfacetsearch.xml but has ID defaultProductStockLevelStatusValueProvider
+		and is aliased to name productStockLevelStatusValueProvider.
+		Fix for SolrJ v6 change that doesn't index unknown item types in the same was as v5.
+	-->
+	<bean id="productStockLevelStatusValueProvider"
+		  parent="defaultProductStockLevelStatusValueProvider"
+		  class="com.amplience.hybris.dm.search.provider.FixedProductStockLevelStatusValueProvider"/>
+
+	<bean id="variantProductStockLevelStatusValueProvider"
+		  parent="defaultProductStockLevelStatusValueProvider"
+		  class="com.amplience.hybris.dm.search.provider.FixedVariantProductStockLevelStatusValueProvider">
+		<property name="productSource" ref="variantProductSource"/>
+	</bean>
+
+</beans>

@@ -2,7 +2,7 @@ REM @echo off
 
 setlocal
 
-cd %~dps0hybris/bin/platform
+cd %~dps0core-customize/hybris/bin/platform
 
 
 CALL setantenv.bat
