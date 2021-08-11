@@ -11,6 +11,7 @@
 		<extension name='yacceleratorbackoffice'/>
 		<extension name='yacceleratorinitialdata'/>
 		<extension name='yacceleratorstorefront'/>
+		<extension name='solrserver'/>
 
 		<!-- Amplience DM extensions -->
 		<extension name="ampliencedm"/>
