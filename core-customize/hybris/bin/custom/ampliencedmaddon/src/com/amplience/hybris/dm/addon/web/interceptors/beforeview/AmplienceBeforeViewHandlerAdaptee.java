@@ -4,6 +4,7 @@
 package com.amplience.hybris.dm.addon.web.interceptors.beforeview;
 
 import com.amplience.hybris.dm.config.AmplienceConfigService;
+import com.amplience.hybris.dm.format.AmplienceImageFormatStrategy;
 import com.amplience.hybris.dm.localization.AmplienceLocaleStringStrategy;
 import de.hybris.platform.addonsupport.interceptors.BeforeViewHandlerAdaptee;
 import org.springframework.beans.factory.annotation.Required;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Adds the following the model:
  * - Amplience account configuration
  * - The session locale (including fallbacks) in Amplience format
+ * - The image format value to use when requesting Amplience images
  * <p>
  * It also changes the view used to render the quickViewPopup to one provided by the amplience addon.
  */
@@ -25,6 +27,7 @@ public class AmplienceBeforeViewHandlerAdaptee implements BeforeViewHandlerAdapt
 {
 	private AmplienceConfigService amplienceConfigService;
 	private AmplienceLocaleStringStrategy amplienceLocaleStringStrategy;
+	private AmplienceImageFormatStrategy amplienceImageFormatStrategy;
 
 	protected AmplienceConfigService getAmplienceConfigService()
 	{
@@ -48,13 +51,24 @@ public class AmplienceBeforeViewHandlerAdaptee implements BeforeViewHandlerAdapt
 		this.amplienceLocaleStringStrategy = amplienceLocaleStringStrategy;
 	}
 
-// ----------
+	protected AmplienceImageFormatStrategy getAmplienceImageFormatStrategy()
+	{
+		return amplienceImageFormatStrategy;
+	}
+
+	public void setAmplienceImageFormatStrategy(final AmplienceImageFormatStrategy amplienceImageFormatStrategy)
+	{
+		this.amplienceImageFormatStrategy = amplienceImageFormatStrategy;
+	}
+
+	// ----------
 
 	@Override
 	public String beforeView(final HttpServletRequest request, final HttpServletResponse response, final ModelMap model, final String viewName) throws Exception
 	{
 		addAmplienceConfigToModel(model);
 		addLocaleToModel(model);
+		addFormatToModel(model);
 
 		return adjustView(viewName);
 	}
@@ -81,5 +95,10 @@ public class AmplienceBeforeViewHandlerAdaptee implements BeforeViewHandlerAdapt
 	protected void addLocaleToModel(final ModelMap model)
 	{
 		model.addAttribute("amplienceLocales", getAmplienceLocaleStringStrategy().getCurrentLocaleString());
+	}
+
+	protected void addFormatToModel(final ModelMap model)
+	{
+		model.addAttribute("amplienceImageFormat", getAmplienceImageFormatStrategy().getImageFormat());
 	}
 }

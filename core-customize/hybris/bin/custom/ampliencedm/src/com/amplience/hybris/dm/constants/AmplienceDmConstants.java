@@ -16,6 +16,10 @@ public final class AmplienceDmConstants extends GeneratedAmplienceDmConstants
 	}
 
 	// Implement here constants used by this extension
-	public static final String MAIL_USE_SMTPS = "ampliencedm.mail.use.smtps";
-	public static final String MAIL_CHECK_SERVER_IDENTITY = "ampliencedm.mail.check.server.identity";
+	public static final String MAIL_USE_SMTPS = "mail.use.smtps";
+	public static final String MAIL_CHECK_SERVER_IDENTITY = "mail.check.server.identity";
+
+	// Query parameters used when requesting Amplience media
+	public static final String URL_QUERY_PARAM_LOCALE = "locale";
+	public static final String URL_QUERY_PARAM_FORMAT = "fmt";
 }

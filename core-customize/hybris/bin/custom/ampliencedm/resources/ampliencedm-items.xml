@@ -127,7 +127,7 @@
 					<persistence type="property"/>
 				</attribute>
 				<attribute qualifier="sendReportWhenNoneMissing" type="boolean">
-					<description>Send and email even if any of the product images are missing</description>
+					<description>Send an email even if none of the product images are missing</description>
 					<persistence type="property"/>
 					<modifiers optional="false"/>
 					<defaultvalue>Boolean.FALSE</defaultvalue>

@@ -12,14 +12,31 @@
 <%@ attribute name="quickView" required="false" type="java.lang.Boolean" %>
 
 <c:set value="${ycommerce:productImage(product, 'product')}" var="productImage"/>
+<c:set var="amplienceFmtQueryParam" value="${not empty amplienceImageFormat ? '&fmt='.concat(escape:js(amplienceImageFormat)) : ''}"/>
 
+<!-- Overwriting all default templates to append the Amplience format query param -->
 <c:set var="dataOptions">
 	{
 	"client": "${escape:js(amplienceConfig.accountIdentifier)}",
 	"imageBasePath": "//${escape:js(amplienceConfig.imageHostname)}/",
 	"locale": "${escape:js(amplienceLocales)}",
 	"set": "${escape:json(product.amplienceMediaSet)}",
-	"errImg": "missing_product"
+	"errImg": "missing_product",
+	"templates": {
+		"thumb": "w=85&h=85&qlt=70${amplienceFmtQueryParam}",
+		"desktop": {
+			"main": "w=1000&h=1000${amplienceFmtQueryParam}",
+			"mainRetina": "w=2000&h=2000${amplienceFmtQueryParam}"
+		},
+		"desktopFull": {
+			"main": "w=1000${amplienceFmtQueryParam}",
+			"mainRetina": "w=2000${amplienceFmtQueryParam}"
+		},
+		"mobile": {
+			"main": "w=500&h=500${amplienceFmtQueryParam}",
+			"mainRetina": "w=1000&h=1000${amplienceFmtQueryParam}"
+		}
+	}
 	}
 </c:set>
 

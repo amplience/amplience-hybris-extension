@@ -3,7 +3,7 @@
 
 ## Introduction
 
-These are the steps required to install SAP Commerce 2005 with the Amplience Extension on a local system using the
+These are the steps required to install SAP Commerce 2211 with the Amplience Extension on a local system using the
 default embedded HSQLDB database and an embedded Solr index.
 
 These steps assume that you are using the SAP Commerce Accelerator Apparel Store responsive storefront with the turnkey
@@ -16,9 +16,9 @@ Where there are differences in the commands to be executed on Windows, Linux, an
 
 ### Prerequisites
 
-* SAP Commerce 2005
-* Amplience Extension 3 for SAP Commerce
-* Java 11
+* SAP Commerce 2211
+* Amplience Extension 4 for SAP Commerce
+* Java 17
 
 
 
@@ -27,21 +27,21 @@ Where there are differences in the commands to be executed on Windows, Linux, an
 ##### 1. Setup the local project
 
 * Create a new folder for the project.
-* Unzip SAP Commerce Suite 2005 into the project folder.
-* Unzip Amplience Extension 3 for SAP Commerce into the project folder.
+* Unzip SAP Commerce Suite 2211 into the project folder.
+* Unzip Amplience Extension 4 for SAP Commerce into the project folder.
 
-> Note that the Amplience extensions live in the `hybris/bin/ext-amplience` path under the project folder.
+> Note that the Amplience extensions live in the `core-customize/hybris/bin/custom` path under the project folder.
 
 ##### 2. Prepare the local project configuration
 
-* Open a command window on the project folder and navigate to the `hybris/bin/platform` folder:
+* Open a command window on the project folder and navigate to the `core-customize/hybris/bin/platform` folder:
 
 ```shell script
 # Windows
-cd hybris\bin\platform
+cd core-customize\hybris\bin\platform
 
 # Linux / macOS
-cd hybris/bin/platform
+cd core-customize/hybris/bin/platform
 ```
 
 * Setup the SAP Commerce ant build environment by running this command
@@ -63,7 +63,7 @@ ant
 
 ##### 3. Add SAP Commerce properties
 
-* Edit the SAP Commerce configuration file `hybris/config/local.properties`
+* Edit the SAP Commerce configuration file `core-customize/hybris/config/local.properties`
 * Generate your own new password for the `admin` user and update the `local.properties` file to set it in the
 `initialpassword.admin` property.
 
@@ -74,7 +74,7 @@ initialpassword.admin=[new-random-password]
 
 ##### 4. Add the Amplience Extension to the `localextensions.xml`
 
-* Edit the SAP Commerce configuration file `hybris/config/localextensions.xml`
+* Edit the SAP Commerce configuration file `core-customize/hybris/config/localextensions.xml`
 * Add the `ampliencedm` and `ampliencedmaddon` extensions
 
 ```xml
@@ -90,7 +90,7 @@ additional sample product data.
 > The `ampliencedmacceleratordemo` extension is only compatible with the Apparel sample product data model.
 > Do not use with a customised product data model. See the documentation guide for more details.
 
-The complete copy of the `hybris/config/localextensions.xml` is provided here:
+The complete copy of the `core-customize/hybris/config/localextensions.xml` is provided here:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -99,6 +99,7 @@ The complete copy of the `hybris/config/localextensions.xml` is provided here:
 		<path dir="${HYBRIS_BIN_DIR}"/>
 
 		<extension name='acceleratorstorefrontcommons'/>
+		<extension name='solrserver'/>
 		<extension name='adaptivesearchsolr'/>
 		<extension name='apparelstore'/>
 		<extension name='cmsbackoffice'/>
@@ -197,10 +198,10 @@ INFO: Server startup in 120106 ms
 If you want SAP Commerce to be able to send emails, for example the Amplience missing images report email, then it
 needs to be configured to use an SMTP server.
 
-* Add the following properties to the hybris/config/local.properties file:
+* Add the following properties to the core-customize/hybris/config/local.properties file:
 
 ```properties
-mail.smtp.server=my.smpt.server.name
+mail.smtp.server=my.smtp.server.name
 mail.smtp.port=25
 ```
 
@@ -213,7 +214,7 @@ mail.use.tls=true or false
 mail.use.smtps=true or false
 ```
 
-*. Support for SMTPS secure connections to an SMTP server:
+* Support for SMTPS secure connections to an SMTP server:
 
 ```properties
 mail.use.smtps=true or false
@@ -225,7 +226,7 @@ mail.use.smtps=true or false
 
 ## Configuring SAP Commerce to use your Amplience Account
 
-By default the Amplience Extension 3 for SAP Commerce is configured to use the turnkey `hybrisext` Amplience account.
+By default the Amplience Extension 4 for SAP Commerce is configured to use the turnkey `hybrisext` Amplience account.
 This account can be used for demo and familiarization purposes. To host your own media data in Amplience you will need
 a separate account. You can request an account from Amplience.
 
@@ -233,8 +234,8 @@ Once you have your Amplience account details you can configure the Amplience Ext
 
 ### Single Amplience Account
 
-If you have a single Amplience account configuration that you want to use for all your sites then you can set set the
-following properties in your `hybris/config/local.properties` file:
+If you have a single Amplience account configuration that you want to use for all your sites then you can set the
+following properties in your `core-customize/hybris/config/local.properties` file:
 
 ```properties
 amplience.dm.config.accountIdentifier=
@@ -247,12 +248,12 @@ amplience.dm.config.imageHostname=
 
 If you have multiple sites in your SAP Commerce solution that need to use different Amplience account details then
 these settings can be specified on each SAP Commerce `BaseSite`. The settings on the `BaseSite` take priority over the
-values set in the `hybris/config/local.properties` file.
+values set in the `core-customize/hybris/config/local.properties` file.
 
 
 ## Exporting Accelerator Sample Product Images
 
-Initially your Amplience account will not contain any product media. The Amplience Extension 3 for SAP Commerce includes
+Initially your Amplience account will not contain any product media. The Amplience Extension 4 for SAP Commerce includes
 a script to export the SAP Commerce product images. This script works with the SAP Commerce Accelerator Apparel Store
 product model and may need to be customised if your product model is different.
 
@@ -262,7 +263,7 @@ SAP Commerce administration console’s (hac) Scripting Languages Console. The s
 `ampliencedmacceleratordemo` extension, so in your project folder look in:
 
 ```
-hybris/bin/ext-amplience/ampliencedmacceleratordemo/resources/ampliencedmacceleratordemo/script/exportImages.groovy
+core-customize/hybris/bin/custom/ampliencedmacceleratordemo/resources/ampliencedmacceleratordemo/script/exportImages.groovy
 ```
 
 ## Deleting Product Images from Hybris
@@ -274,7 +275,7 @@ This delete images script can be run in the same way as the export script above.
 called `deleteImages.groovy`:
 
 ```
-hybris/bin/ext-amplience/ampliencedmacceleratordemo/resources/ampliencedmacceleratordemo/script/deleteImages.groovy
+core-customize/hybris/bin/custom/ampliencedmacceleratordemo/resources/ampliencedmacceleratordemo/script/deleteImages.groovy
 ```
 
 The script will delete the images from both the staged and online products. Only do this once you have confirmed that
@@ -282,14 +283,14 @@ your storefront images are being correctly served from Amplience.
 
 ## Uploading Support Images
 
-The Amplience Extension 3 for SAP Commerce requires a small number of support images to exist in your Amplience account.
+The Amplience Extension 4 for SAP Commerce requires a small number of support images to exist in your Amplience account.
 These images exist in the turnkey `hybrisext` account but if you are using your own account you will need to upload
 these images via your Amplience FTP account (Amplience Customer Success can give you your FTP details).
 
 The images are included in the `ampliencedmaddon` extension and are located in at the following location:
 
 ```
-hybris/bin/ext-amplience/ampliencedmaddon/resources/ampliencedmaddon/upload-images
+core-customize/hybris/bin/custom/ampliencedmaddon/resources/ampliencedmaddon/upload-images
 ```
 
 > After uploading these images manually into your Amplience account make sure that they are published.
@@ -329,3 +330,14 @@ The following transformation templates should exist in your account.
 
 > If you create any new transformation templates in your account or change any existing ones then make sure that you
 > publish the changes.
+
+### Accelerated Media
+
+Amplience's Accelerated Media feature is enabled on the `hybrisext` account. This allows for an optimised media delivery and includes support for additional media codecs - for example, it enables the AVIF format for images. When an image is requested with the `auto` format (`&fmt=auto`), Amplience will automatically serve the most appropriate format for the browser. 
+
+By default, the Amplience Extension 4 for SAP Commerce is configured to request the `auto` format. This can be changed by setting the following property in your `core-customize/hybris/config/local.properties` file:
+
+```properties
+# If not set, the format query parameter ("fmt") will not be sent when requesting an Amplience media
+amplience.dm.image.format=
+```

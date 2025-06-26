@@ -20,6 +20,7 @@
 	<bean id="defaultAmplienceBeforeViewHandlerAdaptee" class="com.amplience.hybris.dm.addon.web.interceptors.beforeview.AmplienceBeforeViewHandlerAdaptee">
 		<property name="amplienceConfigService" ref="amplienceConfigService"/>
 		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
+		<property name="amplienceImageFormatStrategy" ref="amplienceImageFormatStrategy"/>
 	</bean>
 
 	<alias alias="amplienceBeforeViewHandlerAdapter" name="defaultAmplienceBeforeViewHandlerAdapter"/>

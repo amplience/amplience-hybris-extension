@@ -5,6 +5,7 @@ package com.amplience.hybris.dm.product.impl;
 
 import com.amplience.hybris.dm.config.AmplienceConfigData;
 import com.amplience.hybris.dm.config.AmplienceConfigService;
+import com.amplience.hybris.dm.format.AmplienceImageFormatStrategy;
 import com.amplience.hybris.dm.localization.AmplienceLocaleStringStrategy;
 import com.amplience.hybris.dm.product.AmplienceIdentifierSanitizer;
 import com.amplience.hybris.dm.product.AmplienceProductResolver;
@@ -43,6 +44,9 @@ public class AmplienceProductSwatchUrlResolverTest
 	private AmplienceLocaleStringStrategy localeStringStrategy;
 
 	@Mock
+	private AmplienceImageFormatStrategy amplienceImageFormatStrategy;
+
+	@Mock
 	private AmplienceSeoImageNameStrategy amplienceSeoImageNameStrategy;
 
 	@Mock
@@ -65,11 +69,12 @@ public class AmplienceProductSwatchUrlResolverTest
 		when(amplienceIdentifierSanitizer.sanitize(eq("image-junit"))).thenReturn("image-junit");
 
 		when(localeStringStrategy.getCurrentLocaleString()).thenReturn("foo");
+		when(amplienceImageFormatStrategy.getImageFormat()).thenReturn("auto");
 		when(amplienceProductResolver.resolveProduct(any(ProductModel.class))).thenReturn(productModel);
 		when(amplienceConfigService.getConfigForCurrentSite()).thenReturn(initAmplienceConfigData());
 		when(amplienceSeoImageNameStrategy.getSeoName(any(ProductModel.class))).thenReturn("seo-name-junit");
 
-		when(defaultProductImageUrlResolver.resolve(any(ProductModel.class))).thenReturn("//imageHostname-junit/i/account-junit/image-junit/seo-name-junit.jpg?locale=foo");
+		when(defaultProductImageUrlResolver.resolve(any(ProductModel.class))).thenReturn("//imageHostname-junit/i/account-junit/image-junit/seo-name-junit?locale=foo&fmt=auto");
 	}
 
 	private AmplienceConfigData initAmplienceConfigData()
@@ -93,7 +98,7 @@ public class AmplienceProductSwatchUrlResolverTest
 	@Test
 	public void testResolveInternalAltSwatch() throws Exception
 	{
-		final String expectedResult = "//imageHostname-junit/i/account-junit/image-junit" + SWATCH_SUFFIX + "/seo-name-junit.jpg?locale=foo";
+		final String expectedResult = "//imageHostname-junit/i/account-junit/image-junit" + SWATCH_SUFFIX + "/seo-name-junit?locale=foo&fmt=auto";
 		final String result = amplienceProductSwatchUrlResolver.resolveInternal(productModel);
 		Assert.assertEquals(expectedResult, result);
 	}
@@ -103,7 +108,7 @@ public class AmplienceProductSwatchUrlResolverTest
 	{
 		when(productModel.isAmplienceAltSwatch()).thenReturn(Boolean.FALSE);
 
-		final String expectedResult = "//imageHostname-junit/i/account-junit/image-junit/seo-name-junit.jpg?locale=foo";
+		final String expectedResult = "//imageHostname-junit/i/account-junit/image-junit/seo-name-junit?locale=foo&fmt=auto";
 		final String result = amplienceProductSwatchUrlResolver.resolveInternal(productModel);
 		Assert.assertEquals(expectedResult, result);
 	}

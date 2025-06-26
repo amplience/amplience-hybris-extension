@@ -13,12 +13,14 @@ Amplience.Dm = {
 		$(".amplience-viewerKit-product-gallery", context).each(function (index, value) {
 			const options = $(value).data("options");
 			options.target = "#" + $(value).attr('id');
+			options.cacheControl = Date.now();
 			options.secure = ('https:' === document.location.protocol);
 			options.errCallback = function () {
 				console.log('viewer-kit something went wrong loading the set');
 			};
 			new amp.Viewer(options);
 		});
+
 	}
 };
 
