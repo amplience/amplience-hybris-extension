@@ -13,8 +13,20 @@
 		<int name="zkClientTimeout">${zkClientTimeout:30000}</int>
 		<int name="distribUpdateSoTimeout">${distribUpdateSoTimeout:600000}</int>
 		<int name="distribUpdateConnTimeout">${distribUpdateConnTimeout:60000}</int>
-		<str name="zkCredentialsProvider">${zkCredentialsProvider:org.apache.solr.common.cloud.DefaultZkCredentialsProvider}</str>
+		
+		<!-- Settings without ZK ACLs (default) -->
 		<str name="zkACLProvider">${zkACLProvider:org.apache.solr.common.cloud.DefaultZkACLProvider}</str>
+		<str name="zkCredentialsProvider">${zkCredentialsProvider:org.apache.solr.common.cloud.DefaultZkCredentialsProvider}</str>
+		<str name="zkCredentialsInjector">${zkCredentialsInjector:org.apache.solr.common.cloud.DefaultZkCredentialsInjector}</str>
+		<!-- Settings for ZK ACLs -->
+		<!--<str name="zkACLProvider">${zkACLProvider:org.apache.solr.common.cloud.DigestZkACLProvider}</str>-->
+		<!--<str name="zkCredentialsProvider">${zkCredentialsProvider:org.apache.solr.common.cloud.DigestZkCredentialsProvider}</str>-->
+		<!--<str name="zkCredentialsInjector">${zkCredentialsInjector:org.apache.solr.common.cloud.VMParamsZkCredentialsInjector}</str>-->
+
+		<bool name="distributedClusterStateUpdates">${distributedClusterStateUpdates:true}</bool>
+		<bool name="distributedCollectionConfigSetExecution">${distributedCollectionConfigSetExecution:true}</bool>
+		<int name="minStateByteLenForCompression">${minStateByteLenForCompression:-1}</int>
+		<str name="stateCompressor">${stateCompressor:org.apache.solr.common.util.ZLibCompressor}</str>
 	</solrcloud>
 
 	<shardHandlerFactory name="shardHandlerFactory" class="HttpShardHandlerFactory">

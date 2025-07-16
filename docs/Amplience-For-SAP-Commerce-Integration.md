@@ -12,7 +12,7 @@ The document assumes a level of knowledge of both Amplience Dynamic Media and SA
 user guide to either of these applications, instead focusing on the integration between the two.
 
 This extension enables a number of scenarios for using Amplience Dynamic Media images within the SAP Commerce B2C
-Accelerator and for presentation of product imagery within the storefront. The extension is based on SAP Commerce 2005
+Accelerator and for presentation of product imagery within the storefront. The extension is based on SAP Commerce 2211
 and provides an addon for the Accelerator storefront. There is a demo extension that shows how Amplience could be
 integrated with the Apparel data model and sample product data.
 
@@ -150,7 +150,7 @@ syntax (below). More details can be found in the Amplience Dynamic Media Playgro
 
 An example url:
 ```
-https://cdn.media.amplience.net/s/hybrisext/102277_lime-ms/Categories/Helmets/Helmets-Snow/Trace-Helm-lime.jpg?locale=en-GB,en-*,*&$product$&$roundel$&new=1
+https://cdn.media.amplience.net/s/hybrisext/102277_lime-ms/Categories/Helmets/Helmets-Snow/Trace-Helm-lime.jpg?locale=en-GB,en-*,*&fmt=auto&$product$&$roundel$&new=1
 ```
 
 The URL is broken down as follows:
@@ -175,6 +175,10 @@ The URL is broken down as follows:
   * This instructs Amplience which locale to use when retrieving image data. In this example the `en-GB` locale is tried
     first, followed by any `en` locale content, finally if no content can be found with the previous locales then return
     any image found for the item identifier. e.g. `locale=en-GB,en-*,*`
+* Format
+  * Relevant when Amplience Smart Images / Accelerated Media is enabled on the Amplience account
+  * When set to `auto` like in this example, Amplience will automatically select the best format for the current browser.
+  * By default in this extension, this query parameter is set to `fmt=auto`
 * Transformation Templates
   * Transformation Templates are defined in your Amplience account and can be used in URL. Amplience will substitute
     whatever is defined in the template when parsing the URL. The transformation templates can contain any of the URL
@@ -279,7 +283,7 @@ This Transformation Template shows 3 variables being set up, to enable the `visi
 
 These can be provided to in the URL, for example:
 ```
-https://cdn.media.amplience.net/s/hybrisext/102277_lime-ms/Categories/Helmets/Helmets-Snow/Trace-Helm-lime.jpg?locale=en-GB,en-*,*&$product$&$roundel$&sale=1
+https://cdn.media.amplience.net/s/hybrisext/102277_lime-ms/Categories/Helmets/Helmets-Snow/Trace-Helm-lime?locale=en-GB,en-*,*&fmt=auto&$product$&$roundel$&sale=1
 ```
 This URL isplays the _Sale_ roundel on the image.
 
@@ -555,7 +559,7 @@ When the Amplience media URLs are built using the UrlResolvers in the `amplience
 In the following URL the SEO text is `Categories/Helmets/Helmets-Snow/Trace-Helm-lime`:
 
 ```
-https://cdn.media.amplience.net/s/Hybrisext/102277_lime-ms/Categories/Helmets/Helmets-Snow/Trace-Helm-lime.jpg?locale=en-GB,en-*,*&$product$
+https://cdn.media.amplience.net/s/Hybrisext/102277_lime-ms/Categories/Helmets/Helmets-Snow/Trace-Helm-lime?locale=en-GB,en-*,*&fmt=auto&$product$
 ```
 
 This SEO text is built by the `AmplienceSeoImageNameStrategy` given a specific product. The default implementation is to

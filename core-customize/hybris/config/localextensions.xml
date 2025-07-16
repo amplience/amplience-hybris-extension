@@ -4,6 +4,7 @@
 		<path dir="${HYBRIS_BIN_DIR}"/>
 
 		<extension name='acceleratorstorefrontcommons'/>
+		<extension name='solrserver'/>
 		<extension name='adaptivesearchsolr'/>
 		<extension name='apparelstore'/>
 		<extension name='cmsbackoffice'/>

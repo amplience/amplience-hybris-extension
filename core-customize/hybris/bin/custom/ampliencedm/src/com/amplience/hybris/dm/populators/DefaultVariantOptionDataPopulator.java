@@ -4,23 +4,15 @@
 package com.amplience.hybris.dm.populators;
 
 import de.hybris.platform.commercefacades.product.converters.populator.VariantOptionDataPopulator;
-import de.hybris.platform.commercefacades.product.data.PriceData;
-import de.hybris.platform.commercefacades.product.data.PriceDataType;
-import de.hybris.platform.commercefacades.product.data.VariantOptionData;
 import de.hybris.platform.commercefacades.product.data.VariantOptionQualifierData;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.model.type.ComposedTypeModel;
-import de.hybris.platform.jalo.order.price.PriceInformation;
 import de.hybris.platform.servicelayer.type.TypeService;
 import de.hybris.platform.variants.model.VariantAttributeDescriptorModel;
 import de.hybris.platform.variants.model.VariantProductModel;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.util.Assert;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -41,64 +33,30 @@ public class DefaultVariantOptionDataPopulator extends VariantOptionDataPopulato
 		this.typeService = typeService;
 	}
 
-	/**
-	 * Populate the VariantOptionData for a VariantProductModel
-	 *
-	 * @param source the source VariantProductModel
-	 * @param target the target VariantOptionData
-	 */
 	@Override
-	public void populate(final VariantProductModel source, final VariantOptionData target)
+	protected List<VariantOptionQualifierData> convertTypedVariantOptionQualifiers(final VariantProductModel source)
 	{
-		Assert.notNull(source, "Parameter source cannot be null.");
-		Assert.notNull(target, "Parameter target cannot be null.");
+		final List<VariantOptionQualifierData> variantOptionQualifiers = new ArrayList<>();
 
-		if (source.getBaseProduct() != null)
+		// Call getVariantAttributeDescriptorModels rather than getVariantsService().getVariantAttributesForVariantType()
+		final List<VariantAttributeDescriptorModel> descriptorModels = getVariantAttributeDescriptorModels(source);
+
+		for (final VariantAttributeDescriptorModel descriptorModel : descriptorModels)
 		{
-			// Call getVariantAttributeDescriptorModels rather than getVariantsService().getVariantAttributesForVariantType()
-			final List<VariantAttributeDescriptorModel> descriptorModels = getVariantAttributeDescriptorModels(source);
+			// Create the variant qualifier
+			final VariantOptionQualifierData variantOptionQualifier = new VariantOptionQualifierData();
+			final String qualifier = descriptorModel.getQualifier();
+			variantOptionQualifier.setQualifier(qualifier);
+			variantOptionQualifier.setName(descriptorModel.getName());
 
-			final Collection<VariantOptionQualifierData> variantOptionQualifiers = new ArrayList<>();
-			for (final VariantAttributeDescriptorModel descriptorModel : descriptorModels)
-			{
-				// Create the variant qualifier
-				final VariantOptionQualifierData variantOptionQualifier = new VariantOptionQualifierData();
-				final String qualifier = descriptorModel.getQualifier();
-				variantOptionQualifier.setQualifier(qualifier);
-				variantOptionQualifier.setName(descriptorModel.getName());
+			// Lookup the value
+			final Object variantAttributeValue = lookupVariantAttributeName(source, qualifier);
+			variantOptionQualifier.setValue(variantAttributeValue == null ? "" : variantAttributeValue.toString());
 
-				// Lookup the value
-				final Object variantAttributeValue = lookupVariantAttributeName(source, qualifier);
-				variantOptionQualifier.setValue(variantAttributeValue == null ? "" : variantAttributeValue.toString());
-
-				// Add to list of variants
-				variantOptionQualifiers.add(variantOptionQualifier);
-			}
-
-			target.setVariantOptionQualifiers(variantOptionQualifiers);
-			target.setCode(source.getCode());
-			target.setUrl(getProductModelUrlResolver().resolve(source));
-			target.setStock(getStockConverter().convert(source));
-
-			final PriceDataType priceType;
-			final PriceInformation info;
-			if (CollectionUtils.isEmpty(source.getVariants()))
-			{
-				priceType = PriceDataType.BUY;
-				info = getCommercePriceService().getWebPriceForProduct(source);
-			}
-			else
-			{
-				priceType = PriceDataType.FROM;
-				info = getCommercePriceService().getFromPriceForProduct(source);
-			}
-
-			if (info != null)
-			{
-				final PriceData priceData = getPriceDataFactory().create(priceType, BigDecimal.valueOf(info.getPriceValue().getValue()), info.getPriceValue().getCurrencyIso());
-				target.setPriceData(priceData);
-			}
+			// Add to list of variants
+			variantOptionQualifiers.add(variantOptionQualifier);
 		}
+		return variantOptionQualifiers;
 	}
 
 	/**

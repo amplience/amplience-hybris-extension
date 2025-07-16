@@ -27,7 +27,7 @@ public class AmplienceProductSwatchUrlResolver extends AbstractAmplienceProductI
 			final AmplienceConfigData amplienceConfig = getAmplienceConfigService().getConfigForCurrentSite();
 
 			return "//" + amplienceConfig.getImageHostname() + urlPathElementForAssetType() + amplienceConfig.getAccountIdentifier() +
-				"/" + getImageIdentifierForProduct(product) + "/" + getSeoNameForProduct(product) + ".jpg" + getLocaleParameter();
+				"/" + getImageIdentifierForProduct(product) + "/" + getSeoNameForProduct(product) + getQueryParameters();
 		}
 
 		// We want to delegate to the fallback

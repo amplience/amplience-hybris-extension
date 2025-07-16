@@ -11,7 +11,7 @@
 	<alias alias="amplienceThumbnailUrlAttributeHandler" name="defaultAmplienceThumbnailUrlAttributeHandler"/>
 	<bean id="defaultAmplienceThumbnailUrlAttributeHandler" class="com.amplience.hybris.dm.model.AmplienceThumbnailUrlAttributeHandler">
 		<property name="impersonationService" ref="impersonationService"/>
-		<property name="amplienceProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+		<property name="amplienceProductImageUrlResolver" ref="amplienceBackofficeProductImageUrlResolver"/>
 		<property name="userService" ref="userService"/>
 		<property name="imageFormat" value="product"/>
 		<property name="commonI18NService" ref="commonI18NService"/>
@@ -159,6 +159,7 @@
 		<property name="threadContextService" ref="threadContextService"/>
 		<property name="amplienceConfigService" ref="amplienceConfigService"/>
 		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
+		<property name="amplienceImageFormatStrategy" ref="amplienceImageFormatStrategy"/>
 	</bean>
 
 	<alias name="defaultAmplienceProductImageUrlResolver" alias="amplienceProductImageUrlResolver"/>
@@ -170,6 +171,18 @@
 		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
 		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
 		<property name="defaultProductImageUrlResolver" ref="amplienceUnknownProductImageUrlResolver"/>
+		<property name="amplienceImageFormatStrategy" ref="amplienceImageFormatStrategy"/>
+	</bean>
+
+	<alias name="defaultAmplienceBackofficeProductImageUrlResolver" alias="amplienceBackofficeProductImageUrlResolver"/>
+	<bean id="defaultAmplienceBackofficeProductImageUrlResolver" class="com.amplience.hybris.dm.product.impl.AmplienceBackofficeProductImageUrlResolver">
+		<property name="threadContextService" ref="threadContextService"/>
+		<property name="amplienceConfigService" ref="amplienceConfigService"/>
+		<property name="amplienceSeoImageNameStrategy" ref="amplienceSeoImageNameStrategy"/>
+		<property name="amplienceProductResolver" ref="amplienceProductResolver"/>
+		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
+		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
+		<property name="amplienceImageFormatStrategy" ref="amplienceImageFormatStrategy"/>
 	</bean>
 
 	<alias name="defaultAmplienceProductSwatchUrlResolver" alias="amplienceProductSwatchUrlResolver"/>
@@ -181,6 +194,7 @@
 		<property name="amplienceLocaleStringStrategy" ref="amplienceLocaleStringStrategy"/>
 		<property name="amplienceIdentifierSanitizer" ref="amplienceIdentifierSanitizer"/>
 		<property name="defaultProductImageUrlResolver" ref="amplienceProductImageUrlResolver"/>
+		<property name="amplienceImageFormatStrategy" ref="amplienceImageFormatStrategy"/>
 	</bean>
 
 	<alias name="defaultAmplienceProductImageMetadataUrlResolver" alias="amplienceProductImageMetadataUrlResolver"/>
@@ -209,6 +223,10 @@
 		<property name="baseSiteService" ref="baseSiteService"/>
 	</bean>
 
+	<alias name="defaultAmplienceImageFormatStrategy" alias="amplienceImageFormatStrategy"/>
+	<bean id="defaultAmplienceImageFormatStrategy" class="com.amplience.hybris.dm.format.impl.DefaultAmplienceImageFormatStrategy">
+		<property name="configurationService" ref="configurationService"/>
+	</bean>
 
 	<bean id="amplienceProductImageStatusUpdateJobPerformable" class="com.amplience.hybris.dm.jobs.AmplienceProductImageStatusUpdateJobPerformable" parent="abstractJobPerformable">
 		<property name="amplienceProductImageMetadataUrlResolver" ref="amplienceProductImageMetadataUrlResolver"/>
