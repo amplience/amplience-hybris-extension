@@ -170,7 +170,11 @@
 				{
 					"name": "hac",
 					"contextPath": "/hac"
-				}
+				},
+				{
+                    "name": "ycommercewebservices",
+                    "contextPath": "/rest"
+                }
 			]
 		}
 	],
