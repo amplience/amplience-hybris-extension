@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [4.0.0] - 2025-07-16
 
+### Changed
 * Upgraded extensions to support SAP Commerce Cloud 2211
 * Support for Amplience Accelerated Media
 * Updated documentation & structure
